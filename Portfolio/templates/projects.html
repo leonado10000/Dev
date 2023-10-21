@@ -50,19 +50,21 @@
                     min-width: 70px;
                     padding-top: 5px;
                     padding-bottom: 5px;
+                    border: 0px;
                 }
-                a{
+                .a-nav{
+                    margin-left: 10px;
                     text-decoration: none;
                     transition: ease-out 300ms;
                 }
-                a:hover{
+                /* a:hover{
                     margin-top: 30px;
                     margin-left: 10px;
                     margin-right: 10px;
                     padding-bottom: 10px;
                     border-bottom: 2px solid skyblue;
                     transition: ease-in 300ms;
-                }
+                } */
             }
             @media(min-width: 801px){
                 #head-section{
@@ -106,7 +108,7 @@
         </style>
         
         
-        <div id="head-container">
+        <div id="head-container" >
             <a class="a-nav" href="{% url 'ind' %}">
                 <div id="nav-bar-option">Main</div>
             </a>
@@ -175,10 +177,12 @@
                     font-weight: 100;
                     -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
                 }
-                a{
+                #link-to{
+                    text-decoration: none;
                     -webkit-text-fill-color: skyblue;
                     border-bottom: 1px solid lightblue;
                 }
+
 
             }
         </style>
@@ -201,9 +205,9 @@
 
             <div class="stack-and-resources">Resources:</div>
             <ul class="sar-data">
-                <li><a href="https://wiki.osdev.org/">OSDev Wiki</a></li>
+                <li><a id="link-to" href="https://wiki.osdev.org/">OSDev Wiki</a></li>
                 <li>Book: "Operating System Concepts" by Silberschatz, Galvin, and Gagne.</li>
-                <li>YouTube series on OS development (e.g., <a href="https://www.youtube.com/user/HandmadeHero">HandmadeHero</a>).</li>
+                <li>YouTube series on OS development (e.g., <a id="link-to" href="https://www.youtube.com/user/HandmadeHero">HandmadeHero</a>).</li>
             </ul>
         </li>
 
@@ -225,7 +229,7 @@
 
             <div class="stack-and-resources">Resources:</div>
             <ul class="sar-data">
-                <li><a href="http://beej.us/guide/bgnet/">Beej's Guide to Network Programming</a></li>
+                <li><a id="link-to" href="http://beej.us/guide/bgnet/">Beej's Guide to Network Programming</a></li>
                 <li>Python's `socket` library documentation.</li>
             </ul>
         </li>
@@ -248,8 +252,8 @@
 
             <div class="stack-and-resources">Resources:</div>
             <ul class="sar-data">
-                <li>Online machine learning courses (e.g., <a href="https://www.coursera.org/learn/machine-learning">Andrew Ng's Machine Learning on Coursera</a>).</li>
-                <li>Kaggle datasets and competitions (<a href="https://www.kaggle.com/">Kaggle</a>).</li>
+                <li>Online machine learning courses (e.g., <a id="link-to" href="https://www.coursera.org/learn/machine-learning">Andrew Ng's Machine Learning on Coursera</a>).</li>
+                <li>Kaggle datasets and competitions (<a id="link-to" href="https://www.kaggle.com/">Kaggle</a>).</li>
             </ul>
         </li>
 
@@ -273,8 +277,8 @@
 
             <div class="stack-and-resources">Resources:</div>
             <ul class="sar-data">
-                <li><a href="https://docs.djangoproject.com/">Django official documentation</a></li>
-                <li>Online web development tutorials (e.g., The Net Ninja's Django series on <a href="https://www.youtube.com/user/thenetninja">YouTube</a>).</li>
+                <li><a id="link-to" href="https://docs.djangoproject.com/">Django official documentation</a></li>
+                <li>Online web development tutorials (e.g., The Net Ninja's Django series on <a id="link-to" href="https://www.youtube.com/user/thenetninja">YouTube</a>).</li>
             </ul>
         </li>
 
@@ -296,7 +300,7 @@
             <div class="stack-and-resources">Resources:</div>
             <ul class="sar-data">
                 <li>Docker and Kubernetes official documentation.</li>
-                <li>Online scripting tutorials (e.g., <a href="https://www.youtube.com/watch?v=0fKg7e37bQE">PowerShell Scripting Crash Course on YouTube</a>).</li>
+                <li>Online scripting tutorials (e.g., <a id="link-to" href="https://www.youtube.com/watch?v=0fKg7e37bQE">PowerShell Scripting Crash Course on YouTube</a>).</li>
             </ul>
         </li>
     </ul>
