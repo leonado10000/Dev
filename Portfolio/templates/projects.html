@@ -90,11 +90,11 @@
                     padding-top: 5px;
                     padding-bottom: 5px;
                 }
-                a{
+                .a-nav{
                     text-decoration: none;
                     transition: ease-out 300ms;
                 }
-                a:hover{
+                .a-nav:hover{
                     margin-top: 30px;
                     margin-left: 10px;
                     margin-right: 10px;
@@ -107,22 +107,22 @@
         
         
         <div id="head-container">
-            <a href="{% url 'ind' %}">
+            <a class="a-nav" href="{% url 'ind' %}">
                 <div id="nav-bar-option">Main</div>
             </a>
-            <a href="{% url 'projects' %}">
+            <a class="a-nav" href="{% url 'projects' %}">
                 <div id="nav-bar-option">Projects</div>
             </a>
-            <a href="">    
+            <a  class="a-nav" href="">    
                 <div id="nav-bar-option">Blog</div>
             </a>
-            <a href="">    
+            <a class="a-nav" href="">    
                 <div id="nav-bar-option">Else</div>
             </a>
         </div>
     </div>
 
-    <h2>Projects and Technology Stacks</h2>
+    <h2 style="font-style: italic;font-family: cursive;">Projects and Technology Stacks</h2>
 
         <style>
             @media (max-width: 800px){
@@ -134,8 +134,8 @@
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 }
                 #project{
-                    margin-top: 20px;
-                    padding-bottom: 10px;
+                    margin-top: 30px;
+                    padding-bottom: 20px;
                     border-bottom: 2px solid rgba(255, 255, 255, 0.174);
                 }
                 .project-topic{
@@ -144,18 +144,40 @@
                 #duration{
                     font-size: 15px;
                     font-weight: 100;
-                    -webkit-text-fill-color: rgba(255, 255, 255, 0.3);
+                    -webkit-text-fill-color: rgba(255, 255, 255, 0.4);
                 }
                 p{
                     margin: 0;
                 }
                 #project-name{
-                    font-size: 20px;
+                    margin-top: 15px;
+                    font-size: 23px;
+                    font-weight: 100;
+                    -webkit-text-fill-color: rgb(255, 250, 95);
                 }
                 .project-idea{
+                    margin-left: 10px;
+                    font-size: 15px;
+                    font-weight: 400;
+                    margin-bottom: 15px;
+                    -webkit-text-fill-color: rgba(255, 255, 255, 0.6);
+                }
+                .stack-and-resources{
+                    font-weight: 100;
+                    font-size: 18px;
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                    font-family:Verdana, Geneva, Tahoma, sans-serif;
+                    -webkit-text-fill-color: rgb(166, 237, 255);
+                }
+                .sar-data{
                     font-size: 15px;
                     font-weight: 100;
                     -webkit-text-fill-color: rgba(255, 255, 255, 0.5);
+                }
+                a{
+                    -webkit-text-fill-color: skyblue;
+                    border-bottom: 1px solid lightblue;
                 }
 
             }
@@ -170,15 +192,15 @@
             <p class="project-idea">Develop an operating system kernel with a focus on algorithms, memory management, and process scheduling.
                  You can combine systems software and algorithmic aspects.</p>
 
-            <h4>Stack:</h4>
-            <ul>
+            <div class="stack-and-resources">Stack:</div>
+            <ul class="sar-data">
                 <li>Languages: C and Assembly.</li>
                 <li>Libraries: Standard C libraries (e.g., libc).</li>
                 <li>Tools and Software: QEMU or Bochs for emulation, GCC or Clang for compiling, GDB for debugging.</li>
             </ul>
 
-            <h4>Resources:</h4>
-            <ul>
+            <div class="stack-and-resources">Resources:</div>
+            <ul class="sar-data">
                 <li><a href="https://wiki.osdev.org/">OSDev Wiki</a></li>
                 <li>Book: "Operating System Concepts" by Silberschatz, Galvin, and Gagne.</li>
                 <li>YouTube series on OS development (e.g., <a href="https://www.youtube.com/user/HandmadeHero">HandmadeHero</a>).</li>
@@ -194,15 +216,15 @@
             <p class="project-idea">Create a chat application or file transfer tool that combines networking and API integration.
                  This project can provide practical experience in both areas.</p>
 
-            <h4>Stack:</h4>
-            <ul>
+            <div class="stack-and-resources">Stack:</div>
+            <ul class="sar-data">
                 <li>Language: Python.</li>
                 <li>Libraries: Python's `socket` library.</li>
                 <li>Tools and Software: Version control systems (e.g., Git), IDEs like Visual Studio Code or PyCharm.</li>
             </ul>
 
-            <h4>Resources:</h4>
-            <ul>
+            <div class="stack-and-resources">Resources:</div>
+            <ul class="sar-data">
                 <li><a href="http://beej.us/guide/bgnet/">Beej's Guide to Network Programming</a></li>
                 <li>Python's `socket` library documentation.</li>
             </ul>
@@ -217,15 +239,15 @@
             <p class="project-idea">Develop a machine learning model that addresses a real-world problem. 
                 For instance, you can work on a sentiment analysis or image classification project using Python, TensorFlow, or PyTorch.</p>
 
-            <h4>Stack:</h4>
-            <ul>
+            <div class="stack-and-resources">Stack:</div>
+            <ul class="sar-data">
                 <li>Languages: Python.</li>
                 <li>Libraries: TensorFlow, PyTorch, Keras, Scikit-Learn, Pandas, Numpy.</li>
                 <li>Tools and Software: Jupyter Notebook for interactive development, Conda or virtual environments for package management.</li>
             </ul>
 
-            <h4>Resources:</h4>
-            <ul>
+            <div class="stack-and-resources">Resources:</div>
+            <ul class="sar-data">
                 <li>Online machine learning courses (e.g., <a href="https://www.coursera.org/learn/machine-learning">Andrew Ng's Machine Learning on Coursera</a>).</li>
                 <li>Kaggle datasets and competitions (<a href="https://www.kaggle.com/">Kaggle</a>).</li>
             </ul>
@@ -241,16 +263,16 @@
             <p class="project-idea">Build a web application using Django for the backend and HTML, CSS, and JavaScript for the front end.
                  Create a simple web app, portfolio site, or blog.</p>
 
-            <h4>Stack:</h4>
-            <ul>
+            <div class="stack-and-resources">Stack:</div>
+            <ul class="sar-data">
                 <li>Languages: Python (backend), HTML, CSS, JavaScript (frontend).</li>
                 <li>Frameworks: Django (backend).</li>
                 <li>Libraries: JavaScript libraries like React or Vue.js (frontend).</li>
                 <li>Tools and Software: Code editors like Visual Studio Code, Git for version control, Relational databases (e.g., PostgreSQL, SQLite).</li>
             </ul>
 
-            <h4>Resources:</h4>
-            <ul>
+            <div class="stack-and-resources">Resources:</div>
+            <ul class="sar-data">
                 <li><a href="https://docs.djangoproject.com/">Django official documentation</a></li>
                 <li>Online web development tutorials (e.g., The Net Ninja's Django series on <a href="https://www.youtube.com/user/thenetninja">YouTube</a>).</li>
             </ul>
@@ -265,14 +287,14 @@
             <p class="project-idea">Learn Docker and create a Dockerized application. 
                 Also, practice scripting and automation with PowerShell or Bash.</p>
 
-            <h4>Stack:</h4>
-            <ul>
+            <div class="stack-and-resources">Stack:</div>
+            <ul class="sar-data">
                 <li>Languages: PowerShell or Bash for scripting.</li>
                 <li>Tools and Software: Docker for containerization, Kubernetes for orchestration, a cloud platform (e.g., AWS, Azure, GCP) for deployment and testing.</li>
             </ul>
 
-            <h4>Resources:</h4>
-            <ul>
+            <div class="stack-and-resources">Resources:</div>
+            <ul class="sar-data">
                 <li>Docker and Kubernetes official documentation.</li>
                 <li>Online scripting tutorials (e.g., <a href="https://www.youtube.com/watch?v=0fKg7e37bQE">PowerShell Scripting Crash Course on YouTube</a>).</li>
             </ul>
