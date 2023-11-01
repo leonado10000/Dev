@@ -1,4 +1,4 @@
-
+{% load static  %}
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="https://images.emojiterra.com/google/android-11/512px/1f63c.png" type="image/x-icon">
@@ -38,7 +38,7 @@
                 height: 1100px;
                 display: grid;
                 grid-template-rows: 1fr 10fr 1fr;
-                row-gap: 20px;
+                row-gap: 40px;
             }
             .section{
                 padding: 0px;
@@ -562,13 +562,44 @@
                             </div>
                         </div>            
                 </div>                
+                
+                <style>
+                    #leetcode-card{
+                        height: 170px;
+                    }
+                    #profile-head{
+                                margin-left: 6%;
+                                margin-bottom: 5px;
 
+                                padding-right: 15px;
+                                font-size: 20px;
+                                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+                                width: fit-content;
+                                border-bottom: 2px solid gray;
+                    }
+                </style>
                 <div id="section-profiles">
-                    Profiles
-                    LeetCode
-                    Github
-                    Kaggle
-                    Certificaetes
+                    <div id="profile-head">
+                        Profiles
+                    </div>
+
+                    <div>
+                        <div>
+                            LeetCode
+                            <img id="leetcode-card" src="https://leetcard.jacoblin.cool/Rahul_Jangra?theme=dark&font=Prompt&ext=heatmap" alt="">    
+                        </div>
+                        <div>
+                            Github
+                        </div>
+                        <div>
+                            Kaggle
+                        </div>
+                        <div>
+                            Certificaetes
+                        </div>
+                        
+                    </div>
     
                 </div>
 
