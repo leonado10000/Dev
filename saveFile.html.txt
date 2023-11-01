@@ -579,8 +579,8 @@
                            }
                            .stacks{
                                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                               -webkit-text-fill-color: rgb(255, 255, 255);
-                               text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.715);
+                               -webkit-text-fill-color: rgb(0, 0, 0);
+                               text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.715);
                                font-weight: 500;
                                font-size: 12px;
 
@@ -663,19 +663,19 @@
                        </div>
 
                        <div id="stack-data" >
-                           <div class="stacks" style="background-color: rgb(97, 122, 130);display: inline-block;">
+                           <div class="stacks" style="background-color: rgb(173, 216, 230);display: inline-block;">
                                Python| PyTorch| Tensor Flow| Keras| CUDA
                            </div>
-                           <div class="stacks"  style="background-color: rgb(132, 104, 104);">
+                           <div class="stacks"  style="background-color: rgb(228, 178, 178);">
                                Pandas| Numpy| streamlit
                            </div>
-                           <div class="stacks"  style="background-color: rgb(92, 116, 86);">
+                           <div class="stacks"  style="background-color: rgb(185, 230, 173);">
                                Red Hat| Ubantu
                            </div>
-                           <div class="stacks"   style="background-color: rgb(123, 127, 95);">
+                           <div class="stacks"   style="background-color: rgba(221, 230, 173);">
                                Django| Html-Css| Javascript
                            </div>
-                           <div class="stacks" style="background-color: rgb(107, 97, 130);">
+                           <div class="stacks" style="background-color: rgba(193, 173, 230);">
                                Docker| Kubernetes| WSL
                            </div>
                        </div>            
