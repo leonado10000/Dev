@@ -18,9 +18,9 @@
             body{
                 background-color: white;
                 -webkit-text-fill-color: black;
-                height: 1200px;
+                height: 2600px;
                 display: grid;
-                grid-template-rows: 1fr 10fr 2fr;
+                grid-template-rows: 2fr 17fr 8fr;
                 row-gap: 20px;
                 margin: 0px;
             }
@@ -34,7 +34,7 @@
             body{
                 background-color: white;
                 -webkit-text-fill-color:black;
-                height: 1100px;
+                height: 1800px;
                 display: grid;
                 grid-template-rows: 1fr 10fr 1fr;
                 row-gap: 20px;
@@ -181,11 +181,12 @@
                     font-size: 35px;
 
                     padding-bottom: 5px;
-                    padding-left: 10px;
+                    padding-left: 3%;
                     width: 30%;
                     min-width: fit-content;
                  
                     margin-bottom: 10px;
+                    margin-left: 1px;
                     border-bottom: 2px solid gray;
                     -webkit-text-fill-color: white;   
                 }
@@ -202,7 +203,7 @@
                 #main-right{
                     row-gap: 70px;
                     display: grid;
-                    grid-template-rows: 4fr 1fr 2fr ;
+                    grid-template-rows: 4fr 1fr 3fr ;
                     /* justify-content: center; */
 
                 }
@@ -250,7 +251,7 @@
                 #main-right{
                     row-gap: 20px;
                     display: grid;
-                    grid-template-rows: 4fr 1fr 2fr ;
+                    grid-template-rows: 3fr 1fr 4fr ;
                     
 
                 }
@@ -308,6 +309,39 @@
                         <div id="my-data-data">⚡ 21 years old</div>
                         <div id="my-data-data">👨‍🎓 CSE 3rd Year </div>
                         <div id="my-data-data">🎓 Sir MVIT Bangalore</div>
+                        <div id="my-data-data">👨🏻‍💻 CV intern <a style="-webkit-text-fill-color: rgb(140, 163, 255);" href="https://www.deepcept.ai/">@DeepceptAI</a></div>
+                    </div>
+
+                    <div id="social-data">
+                        <style>
+                            @media (max-width:800px){
+                                #social-data{
+                                    text-align: left;
+                                    /* padding-left: 10%; */
+                                }
+                                .img-social{
+                                    margin-top: 20px;
+                                    width: 20%;
+                                    max-width: 50px;
+                                    margin-right: 5%;
+                                }
+                            }
+                            @media (min-width:801px){
+                                #social-data{
+                                    text-align: left;
+                                    padding-left: 10%;
+                                }
+                                .img-social{
+                                    margin-top: 20px;
+                                    width: 20%;
+                                    max-width: 50px;
+                                    margin-right: 5%;
+                                }
+                            }
+                        </style>
+                        <img class="img-social" src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png" alt="">
+                        <img class="img-social" src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png" alt="">
+                        <img class="img-social" src="https://img.icons8.com/?size=100&id=yoQabS8l0qpr&format=png" alt="">
                     </div>
 
                     <style>
@@ -462,6 +496,7 @@
 
                                 height: 150px;
                                 width: 90%;
+                                max-width: 400;
 
                                 background-position: 50% 50%;
                                 background-size: cover;
@@ -573,9 +608,11 @@
                            #section-stacks{
                                /* background-image: linear-gradient(90deg, rgb(207, 207, 207) 100%, white 50% ); */
                                background-color: rgb(37, 35, 35);
+                               overflow: hidden;
                            }
                            #stack-data{
                                height: 150px;
+                               text-align: center;
                            }
                            .stacks{
                                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -586,16 +623,15 @@
 
                                padding-top:15px;
                                padding-bottom: 5px;
-                               /* height: 50px; */
                                line-height: 20px;
 
                                border: 2px solid gray;
-                               /* height: 60px; */
+                               margin-right: 2%;
 
                                width: 15%;
-                               /* max-width: 110px; */
                                border-radius: 10px;
                                display: inline-block;
+                               overflow: hidden;
 
                            }
                            #stack-head{
@@ -673,28 +709,136 @@
                                Red Hat| Ubantu
                            </div>
                            <div class="stacks"   style="background-color: rgb(123, 127, 95);">
-                               Django| Html-Css| Javascript
+                               Django| Html-Css| JS
                            </div>
                            <div class="stacks" style="background-color: rgb(107, 97, 130);">
-                               Docker| Kubernetes| WSL
+                               Docker| WSL
                            </div>
                        </div>            
                </div>                 
 
                 <div id="section-profiles">
-                    Profiles
-                    LeetCode
-                    Github
-                    Kaggle
-                    Certificaetes
-    
+                    <div id="section-head">
+                        Profiles
+                    </div>
+
+                    <style>
+                        @media (max-width:800px){
+                            #section-profiles{
+                                background-image: linear-gradient(90deg, white 50%, gray 50%);
+                            }
+                            .stats{
+                                padding-left: 5%;
+                                width: 90%;
+                                max-width: 400px;
+                            }
+                            .stat-name{
+                                width: 100%;
+                                text-align: center;
+                                border-bottom: 2px solid gray;
+
+                                margin-top: 15px;
+                                margin-bottom: 5px;
+                                font-size: 20px;
+
+                                font-weight: 400;
+                                font-style: italic;
+                                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                            }
+                            #img-git2{
+                                display: none;
+                            }
+                        }
+
+                        @media (min-width:801px){
+                            #section-profiles{
+                                background-image: linear-gradient(90deg, white 50%, gray 50%);
+                                display: grid;
+                                column-gap: 5%;
+                                grid-template-areas: "stat-name stat-name"
+                                                    "LC git"
+                                                    "img-LC img-git"
+                                                    "img-LC img-git"
+                                                    "img-LC img-git2"
+                                                    "img-LC img-git2"
+                                                    "img-LC img-git2"
+                                                    "img-LC img-git2"
+                                                    "img-LC img-git2"
+                                                    "img-LC img-git2"
+                                                    "img-LC img-git2"
+                                                    "img-LC img-git2"
+                                                    "img-LC img-git2"
+                                                    "img-LC img-git2"
+                                                    "img-LC img-git2"
+                                                    "img-LC img-git2"
+                                ;
+
+                            }
+                            #stat-name{ grid-area: stat-name; }
+                            #img-LC{ grid-area: img-LC; }
+                            #img-git{ grid-area: img-git; }
+                            #LC{ grid-area: LC; }
+                            #git{ grid-area: git; }
+                            #img-git2{ grid-area: img-git2; }
+
+                            .stats{
+                                width: 95%;
+                                display: inline-block;
+                            }
+                            .stat-name{
+                                display: inline-block;
+                                width: fit-content;
+                                text-align: center;
+                                border-bottom: 2px solid gray;
+
+                                margin-top: 15px;
+                                margin-bottom: 5px;
+                                font-size: 20px;
+
+                                font-weight: 400;
+                                font-style: italic;
+                                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                            }
+                        }
+                    </style>
+                    <div class="stat-name" id="LC">
+                        LeetCode
+                    </div>
+                    <img class="stats" id="img-LC" src="https://leetcard.jacoblin.cool/Rahul_Jangra?theme=dark&font=Cousine&ext=heatmap" alt="">
+                    <div class="stat-name" id="git">
+                        Github
+                    </div>
+                    <img class="stats" id="img-git" src="https://github-readme-stats.vercel.app/api?username=leonado10000" alt="">
+                    <img class="stats" id="img-git2" src="https://github-readme-stats.vercel.app/api/top-langs/?username=leonado10000&langs_count=8&layout=compact&border_radius=40&theme=radical&length=80" alt="">
+                    
                 </div>
 
             </div>
         </div>
     </div>
     <div class="section" id="foot-section">
-        foot section
+
+        <style>
+            @media (max-width:800px){
+                #foot-section{
+                    background-color: black;
+                    /* margin: 10px;s */
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    -webkit-text-fill-color: white;
+                }
+            }
+        </style>
+        <div>
+            <img class="img-social" src="https://img.icons8.com/?size=100&id=h3FOPWMfgNnV&format=png" alt="">
+            <img class="img-social" src="https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png" alt="">
+        </div>
+        <div>
+            <a href="https://certificates.simplicdn.net/share/4397060_1688564792.pdf">Data Science with Python</a>by simply learn <br>
+            <a href="https://www.kaggle.com/learn/certification/leonado10000/pandas">Pandas</a>by kaggle <br>
+            <a href="https://www.kaggle.com/learn/certification/leonado10000/intro-to-machine-learning">intro-to-machine-learning</a>by kaggle <br>
+            <a href="https://onlinecourses.nptel.ac.in/noc23_cs104/preview">Applied Accelerated Artificial Intelligence</a>
+        </div>
     </div>
 
 
