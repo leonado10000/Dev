@@ -18,7 +18,7 @@
             body{
                 background-color: white;
                 -webkit-text-fill-color: black;
-                height: 2600px;
+                height: 2400px;
                 display: grid;
                 grid-template-rows: 2fr 17fr 8fr;
                 row-gap: 20px;
@@ -34,9 +34,9 @@
             body{
                 background-color: white;
                 -webkit-text-fill-color:black;
-                height: 1800px;
+                height: 1600px;
                 display: grid;
-                grid-template-rows: 1fr 10fr 1fr;
+                grid-template-rows: 1fr 10fr 2fr;
                 row-gap: 20px;
             }
             .section{
@@ -126,9 +126,9 @@
                 <div id="nav-bar-option">Main</div>
             </a>
             <a class="a-nav" href="{% url 'projects' %}">
-                <div id="nav-bar-option">Projects</div>
+                <div id="nav-bar-option">Ideas</div>
             </a>
-            <a class="a-nav" href="">    
+            <a class="a-nav" href="{% url 'blog' %}">    
                 <div id="nav-bar-option">Blog</div>
             </a>
             <a class="a-nav" href="">    
@@ -339,9 +339,15 @@
                                 }
                             }
                         </style>
-                        <img class="img-social" src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png" alt="">
-                        <img class="img-social" src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png" alt="">
-                        <img class="img-social" src="https://img.icons8.com/?size=100&id=yoQabS8l0qpr&format=png" alt="">
+                        <a href="https://www.linkedin.com/in/rahul-jangra-b32a2322a/">
+                            <img class="img-social" src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png" alt="">
+                        </a>
+                        <a href="https://www.instagram.com/__curf__">
+                            <img class="img-social" src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png" alt="">
+                        </a>
+                        <a href="https://twitter.com/rstarjangra">
+                            <img class="img-social" src="https://img.icons8.com/?size=100&id=yoQabS8l0qpr&format=png" alt="">
+                        </a>
                     </div>
 
                     <style>
@@ -559,30 +565,36 @@
                         }
                     </style>
                     <div id="project-mainbox">
-                            
-                        <div id="project-box" style="background-image: url(https://static.vecteezy.com/system/resources/thumbnails/027/376/701/small/monitor-lo-fi-retro-animation-video.jpg);">
-                            <div id="prj-name">
-                                Operating System <br>
-                                api <br>
-                                Algorithms <br>
-                                data Scrutures
+                        
+                        <a href="{% url 'projects' %}">
+                            <div id="project-box" style="background-image: url(https://static.vecteezy.com/system/resources/thumbnails/027/376/701/small/monitor-lo-fi-retro-animation-video.jpg);">
+                                <div id="prj-name">
+                                    Operating System <br>
+                                    api <br>
+                                    Algorithms <br>
+                                    data Scrutures
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         <!-- <div id="project-box">
                             <div id="prj-name">
                                 Data Science + Kaggle
                             </div>
                         </div> -->
-                        <div id="project-box" style="background-image: url(https://img.freepik.com/premium-photo/heartshaped-electronic-device-with-complex-circuitry-fusion-human-emotions-machine-learning-concept-generative-ai-illustration_124717-2739.jpg);">
-                            <div id="prj-name">
-                                Machine Learning
+                        <a href="{% url 'projects' %}">
+                            <div id="project-box" style="background-image: url(https://img.freepik.com/premium-photo/heartshaped-electronic-device-with-complex-circuitry-fusion-human-emotions-machine-learning-concept-generative-ai-illustration_124717-2739.jpg);">
+                                <div id="prj-name">
+                                    Machine Learning
+                                </div>
                             </div>
-                        </div>
-                        <div id="project-box" style="background-image: url(https://images-platform.99static.com//60ymdkeAKMHeEuZlulWzS5niuzk=/0x0:1055x1055/fit-in/500x500/99designs-contests-attachments/74/74540/attachment_74540382);">
-                            <div id="prj-name">
-                                Web Dev
+                        </a>
+                        <a href="{% url 'projects' %}">
+                            <div id="project-box" style="background-image: url(https://images-platform.99static.com//60ymdkeAKMHeEuZlulWzS5niuzk=/0x0:1055x1055/fit-in/500x500/99designs-contests-attachments/74/74540/attachment_74540382);">
+                                <div id="prj-name">
+                                    Web Dev
+                                </div>
                             </div>
-                        </div>
+                        </a>
                         <!-- <div id="project-box">
                             <div id="prj-name">
                                 Networking + api
@@ -593,12 +605,14 @@
                                 Linux Project
                             </div>
                         </div> -->
-                        <div id="project-box" style="background-image: url(https://i.stack.imgur.com/Ph3Ou.jpg);">
-                            <div id="prj-name">
-                                Python Software Project
-                            </div>
-                        </div>
                         
+                        <a href="{% url 'projects' %}">
+                            <div id="project-box" style="background-image: url(https://i.stack.imgur.com/Ph3Ou.jpg);">
+                                <div id="prj-name">
+                                    Python Software Project
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div id="section-stacks" style="text-align: center;">
@@ -827,17 +841,84 @@
                     padding-right: 20px;
                     -webkit-text-fill-color: white;
                 }
+                .cert-link{
+                    -webkit-text-fill-color: lightblue;
+                    text-decoration: none;
+                }
+                td{
+                    /* border: 1px solid gold; */
+                    height: 40px;
+                    /* column-gap: 15px; */
+                }
+            }
+            @media (min-width:801px){
+                #foot-section{
+                    background-color: black;
+                    /* margin: 10px;s */
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    -webkit-text-fill-color: white;
+                }
+                .cert-link{
+                    -webkit-text-fill-color: lightblue;
+                    text-decoration: none;
+                }
+                td{
+                    /* border: 1px solid gold; */
+                    height: 40px;
+                    /* column-gap: 15px; */
+                }
             }
         </style>
         <div>
-            <img class="img-social" src="https://img.icons8.com/?size=100&id=h3FOPWMfgNnV&format=png" alt="">
-            <img class="img-social" src="https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png" alt="">
-        </div>
+            <a href="https://www.reddit.com/user/Junior-Salt3181">
+                <img class="img-social" src="https://img.icons8.com/?size=100&id=h3FOPWMfgNnV&format=png" alt="">
+            </a>
+            <a href="https://github.com/leonado10000">
+                <img class="img-social" src="https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png" alt="">
+            </a>
+            </div>
         <div>
-            <a href="https://certificates.simplicdn.net/share/4397060_1688564792.pdf">Data Science with Python</a>by simply learn <br>
-            <a href="https://www.kaggle.com/learn/certification/leonado10000/pandas">Pandas</a>by kaggle <br>
-            <a href="https://www.kaggle.com/learn/certification/leonado10000/intro-to-machine-learning">intro-to-machine-learning</a>by kaggle <br>
-            <a href="https://onlinecourses.nptel.ac.in/noc23_cs104/preview">Applied Accelerated Artificial Intelligence</a>
+
+            <table>
+                <thead>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a class="cert-link" href="https://certificates.simplicdn.net/share/4397060_1688564792.pdf">Data Science with Python</a>
+                        </td>
+                        <td>
+                            simply learn
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="cert-link" href="https://www.kaggle.com/learn/certification/leonado10000/pandas">Pandas</a>
+                        </td>
+                        <td>
+                            Kaggle
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="cert-link" href="https://www.kaggle.com/learn/certification/leonado10000/intro-to-machine-learning">intro-to-machine-learning</a>
+                        </td>
+                        <td>
+                            kaggle
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="cert-link" href="https://onlinecourses.nptel.ac.in/noc23_cs104/preview">Applied Accelerated Artificial Intelligence</a>
+                        </td>
+                        <td>
+                            NPTEL
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
