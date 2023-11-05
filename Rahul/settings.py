@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['RahulJangra.vercel.app','.vercel.app','192.168.0.187','','*']
 # Application definition
 
 INSTALLED_APPS = [
+    'blog',
     "Portfolio",
     'Anime',
     "django.contrib.admin",
