@@ -23,20 +23,20 @@ imageLink = [
 
 def blog(request):
     # print(request)
-    if request.method == "POST":
-        test = datetime.datetime.now().__str__()
-        # print(test[:4], test[5:7], test[8:10], test[11:13], test[14:16])
-        year = int(test[:4])
-        mnt = int(test[5:7])
-        dy = int(test[8:10])
-        hr = int(test[11:13])
-        mn = int(test[14:16])
+    # if request.method == "POST":
+    #     test = datetime.datetime.now().__str__()
+    #     # print(test[:4], test[5:7], test[8:10], test[11:13], test[14:16])
+    #     year = int(test[:4])
+    #     mnt = int(test[5:7])
+    #     dy = int(test[8:10])
+    #     hr = int(test[11:13])
+    #     mn = int(test[14:16])
 
-        req_headers = request.META
-        ip_addr = req_headers.get('REMOTE_ADDR')
-        print(ip_addr)
-        a = Data(textfield=request.POST['a'],time=datetime.datetime(year, mnt, dy, hr, mn, tzinfo=datetime.timezone.utc),sender=ip_addr)
-        a.save()
+    #     req_headers = request.META
+    #     ip_addr = req_headers.get('REMOTE_ADDR')
+    #     print(ip_addr)
+    #     a = Data(textfield=request.POST['a'],time=datetime.datetime(year, mnt, dy, hr, mn, tzinfo=datetime.timezone.utc),sender=ip_addr)
+    #     a.save()
 
     data = Data.objects.all().values()
     rel_data = []
