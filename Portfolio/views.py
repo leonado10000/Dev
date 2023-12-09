@@ -42,7 +42,7 @@ certificates = [
 
 
 def index(request):
-    n = 1
+    n = 0
     if n :
         return render(request, 'dist/index.html',{
             "certificates":certificates,
