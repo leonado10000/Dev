@@ -31,10 +31,6 @@
         }
     </style>
 
-    <script>
-        var objDiv = document.getElementById("section-texts");
-        objDiv.scrollTop = objDiv.scrollHeight;
-    </script>
 
 
 
@@ -77,9 +73,9 @@
         }
         @media(min-width: 801px){
             #head-container{
-                /* padding-top: 25px; */
-                text-align: center;
-                height: 50px;
+                display: inline-block;
+                font-size: 35px;
+                /* height: 50px; */
             }
             #nav-bar-option{
                 text-align: center;
@@ -96,6 +92,7 @@
                 padding-bottom: 5px;
             }
             .a-nav{
+                display: inline-block;
                 margin-left: 1%;
                 text-decoration: none;
                 transition: ease-out 100ms;
@@ -109,38 +106,43 @@
             }
             #site-head{
                 display: inline-block;
-                margin-left: 20%;
+                margin-left: 10%;
                 height: 60px;
+
                 -webkit-text-fill-color: rgb(0, 173, 181);
                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
                 font-style: italic;
                 font-size: 35px;
+                
+                /* width: 50%; */
+                margin-right: 10%;
                 text-align: center;
                 padding-top: 10px
             }
         }
     </style>
-    
-    
-    <div id="head-container">
-        <a class="a-nav" href="{% url 'ind' %}">
-            <div id="nav-bar-option">Main</div>
-        </a>
-        <a class="a-nav" href="{% url 'projects' %}">
-            <div id="nav-bar-option">Ideas</div>
-        </a>
-        <a class="a-nav" href="{% url 'blog' %}">    
-            <div id="nav-bar-option">Blog</div>
-        </a>
-        <a class="a-nav" href="">    
-            <div id="nav-bar-option">Else</div>
-        </a>
-        
+
+    <div>
+
         <div id="site-head">
             ChatsApp
         </div>
-    </div>
 
+        <div id="head-container">
+            <a class="a-nav" href="{% url 'ind' %}">
+                <div id="nav-bar-option">Main</div>
+            </a>
+            <a class="a-nav" href="{% url 'projects' %}">
+                <div id="nav-bar-option">Ideas</div>
+            </a>
+            <a class="a-nav" href="{% url 'blog' %}">    
+                <div id="nav-bar-option">Blog</div>
+            </a>
+            <a class="a-nav" href="">    
+                <div id="nav-bar-option">Else</div>
+            </a>
+        </div>
+    </div>
 
 
 
