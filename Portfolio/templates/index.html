@@ -1,3 +1,4 @@
+{% load static %}
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="https://images.emojiterra.com/google/android-11/512px/1f63c.png" type="image/x-icon">
@@ -34,9 +35,9 @@
             body{
                 background-color: white;
                 -webkit-text-fill-color:black;
-                height: 1600px;
+                height: 1500px;
                 display: grid;
-                grid-template-rows: 1fr 10fr 2fr;
+                grid-template-rows: 1fr 11fr 2fr;
                 row-gap: 20px;
             }
             .section{
@@ -49,6 +50,21 @@
     
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
@@ -182,6 +198,7 @@
 
                     padding-bottom: 5px;
                     padding-left: 3%;
+                    padding-right: 3%;
                     width: 30%;
                     min-width: fit-content;
                  
@@ -203,7 +220,7 @@
                 #main-right{
                     row-gap: 70px;
                     display: grid;
-                    grid-template-rows: 4fr 1fr 3fr ;
+                    grid-template-rows: 5fr 1fr 3fr ;
                     /* justify-content: center; */
 
                 }
@@ -251,7 +268,7 @@
                 #main-right{
                     row-gap: 20px;
                     display: grid;
-                    grid-template-rows: 3fr 1fr 4fr ;
+                    grid-template-rows: 3fr 1fr 3fr ;
                     
 
                 }
@@ -300,6 +317,7 @@
             <div id="main-left">
                 
                 <img id="profilepic" src="https://i.pinimg.com/736x/dc/d8/8e/dcd88e655dbab8bbd8ee251563d3eeff.jpg" alt="">
+                <!-- <img id="profilepic" src="{% static 'img/miles1.jpg' %}" alt=""> -->
                 <div id="m-l-container">
                     
                     <div id="name">
@@ -417,10 +435,6 @@
                             "🎃 Spooky fun ahead! 👻🕯️",
                         ];
 
-// Rest of the code remains the same
-
-
-                        // Function to simulate typing animation
                         function typeText(element, text, speed, callback) {
                         let i = 0;
                         const typingInterval = setInterval(() => {
@@ -430,13 +444,11 @@
                             } else {
                             clearInterval(typingInterval);
                             if (callback) {
-                                setTimeout(callback, 5000); // Wait 1 second before starting the next quote
+                                setTimeout(callback, 5000);
                             }
                             }
                         }, speed);
                         }
-
-                        // Function to display a random quote or fact with typing animation
                         function displayRandomQuoteOrFact() {
                         const container = document.getElementById("quote-fact-container");
                         const quoteFactElement = document.getElementById("quote-fact");
@@ -445,7 +457,6 @@
                         const randomIndex = Math.floor(Math.random() * quotesAndFacts.length);
                         const randomText = quotesAndFacts[randomIndex];
 
-                        // Reset typing bar animation
                         typingBar.style.animation = 'none';
                         void typingBar.offsetWidth;
                         typingBar.style.animation = 'typing 0.5s infinite';
@@ -453,7 +464,6 @@
                         typeText(quoteFactElement, randomText, 50, displayRandomQuoteOrFact);
                         }
 
-                        // Call the function initially after a 2-second delay
                         setTimeout(displayRandomQuoteOrFact, 2000);
 
                     </script>
@@ -462,6 +472,50 @@
                 <div id="quote-fact-container">
                     <p id="quote-fact"></p>
                     <div id="typing-bar"></div>
+                </div>
+
+                <div id="ideaBox">
+                    <style>
+                        @media (min-width:801px){
+                            #ideaBox{
+                                margin-top: 20px;
+                                margin-left: 5%;
+                                text-align: left;
+                                
+                                width: 90%;
+                                height: 500px;
+                                border: 2px solid rgb(255, 255, 255);
+                                }
+                        }
+                    </style>
+
+                    <div>
+                        Top usefull links
+                    </div>
+
+                    <div>New Tech and roadmaps</div>
+                    <ul>
+                        <li><a href="https://www.modular.com/max/mojo"><div>mojo</div></a></li>
+                        <li><a href="https://neetcode.io/roadmap"><div>neetcode</div></a></li>
+                    </ul>
+
+                    <div>Github and Open Source</div>
+                    <ul>
+                        <li><a href=""><div></div></a></li>
+                        <li><a href=""><div></div></a></li>
+                    </ul>
+                    <div>AI ML</div>
+                    <ul>
+                        <li><a href="https://paperswithcode.com/"><div>paperswithcode</div></a></li>
+                        <li><a href=""><div></div></a></li>
+                    </ul>
+                    
+                    <div>George Hotz</div>
+                    <ul>
+                        <li><a href="https://geohot.com/"><div>Personal website</div></a></li>
+                        <li><a href="https://github.com/commaai/openpilot"><div>Comma.ai:OpenPilot</div></a></li>
+                    </ul>
+                            
                 </div>
             </div>
             <div id="main-right">
@@ -500,9 +554,9 @@
                                 font-family:Verdana, Geneva, Tahoma, sans-serif;
                                 font-size: 13px;
 
-                                height: 150px;
+                                height: 180px;
                                 width: 90%;
-                                max-width: 400;
+                                max-width: 400px;
 
                                 background-position: 50% 50%;
                                 background-size: cover;
@@ -732,7 +786,40 @@
                </div>                 
 
                 <div id="section-profiles">
-                    <div id="section-head">
+                    <div id="profile-head">
+                        <style>
+                            
+                            @media (max-width:800px) {
+                                #profile-head{
+                                margin-left: 6%;
+                                margin-bottom: 35px;
+
+
+                                padding-right: 15px;
+                                font-size: 20px;
+                                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+                                width: fit-content;
+                                border-bottom: 2px solid gray;
+                            }
+                            }
+
+                            @media (min-width: 801px) {
+                                #profile-head{
+                                margin-left: 6%;
+                                /* margin-bottom: 35px; */
+
+
+                                padding-right: 15px;
+                                font-size: 20px;
+                                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+                                width: fit-content;
+                                border-bottom: 2px solid gray;
+                            } 
+                            }
+
+                        </style>
                         Profiles
                     </div>
 
@@ -788,12 +875,27 @@
                                 ;
 
                             }
-                            #stat-name{ grid-area: stat-name; }
-                            #img-LC{ grid-area: img-LC; }
-                            #img-git{ grid-area: img-git; }
-                            #LC{ grid-area: LC; }
-                            #git{ grid-area: git; }
-                            #img-git2{ grid-area: img-git2; }
+                            #stat-name{
+                                grid-area: stat-name;
+                            }
+                            #img-LC{
+                                grid-area: img-LC;
+                                max-width: 300px;
+                            }
+                            #img-git{
+                                grid-area: img-git;
+                                max-width: 300px;
+                            }
+                            #LC{
+                                grid-area: LC;
+                            }
+                            #git{
+                                grid-area: git;
+                            }
+                            #img-git2{
+                                grid-area: img-git2;
+                                max-width: 300px;
+                            }
 
                             .stats{
                                 width: 95%;
@@ -815,10 +917,12 @@
                             }
                         }
                     </style>
+                    
                     <div class="stat-name" id="LC">
                         LeetCode
                     </div>
                     <img class="stats" id="img-LC" src="https://leetcard.jacoblin.cool/Rahul_Jangra?theme=dark&font=Cousine&ext=heatmap" alt="">
+                    
                     <div class="stat-name" id="git">
                         Github
                     </div>
@@ -830,6 +934,13 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+    
     <div class="section" id="foot-section">
 
         <style>
