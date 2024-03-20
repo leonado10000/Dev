@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-+=$dwy-vf#wx=@y$-w^$%z=dp+z%p^nurm-o_t-rj(*zul2-1@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['RahulJangra.vercel.app','.vercel.app','192.168.0.187','','*','172.20.10.7']
 
@@ -35,9 +35,9 @@ INSTALLED_APPS = [
     'blog',
     "Portfolio",
     'Anime',
-    'user.apps.UserConfig',
-    'crispy_forms',
-    'crispy_bootstrap4',
+    # 'user.apps.UserConfig',
+    # 'crispy_forms',
+    # 'crispy_bootstrap4',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -80,33 +80,33 @@ WSGI_APPLICATION = "Rahul.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+DATABASES = {
+        'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'OPTIONS': {
+            'timeout': 20,  # Specify the timeout option if needed
+        },
+    },
+}
 # DATABASES = {
-#         'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         'OPTIONS': {
-#             'timeout': 20,  # Specify the timeout option if needed
-#         },
-#     },
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "test3",
+#         'USER': 'moni',
+#         'PASSWORD': 'moni'
+#     }
 # }
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "test3",
-        'USER': 'moni',
-        'PASSWORD': 'moni'
-    }
-}
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DATABASE'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_DB_PORT'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.getenv('POSTGRES_DATABASE'),
+#         'USER': os.getenv('POSTGRES_USER'),
+#         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+#         'HOST': os.getenv('POSTGRES_HOST'),
+#         'PORT': os.getenv('POSTGRES_DB_PORT'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
