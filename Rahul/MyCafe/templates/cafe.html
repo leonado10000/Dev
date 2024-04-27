@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cafe</title>
+</head>
+<body>
+
+    <style>
+        body{
+            background-color: black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #body-div{
+            background-image: url('https://wallpapers.com/images/hd/cafe-background-rll3lds8bkk01nim.jpg');
+            background-size: 1200px 700px;
+            background-repeat: no-repeat;
+            background-position: 50% 50px;
+            
+            display: grid;
+            grid-template-rows: 1fr 7fr 2fr;
+        }
+        #header{
+            background-color: rgba(255, 255, 255, 0.7);
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 20px;
+        }
+        #main{
+            margin-left: 10%;
+            margin-right: 10%;
+            height: 800px;
+        }
+        #footer{
+            background-color: beige;
+        }
+    </style>
+    
+    <div id="body-div">
+        <div id="header">
+            <style>
+                #header-body{
+                    display: grid;
+                    grid-template-columns: 4fr 1fr;
+                }
+                #header-links{
+                    text-align: center;
+                    padding-top: 10px;
+                    display: grid;
+                    border-bottom: 2px solid white;
+
+                    font-weight: 400;
+                    font-size: 15px;
+                    text-shadow: 1px 1px 1px white;
+                    grid-template-columns: 1fr 1fr 1fr 1fr 4fr;
+                }
+                #header-social-media{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
+                #header-sm-box{
+                    height: 80px;
+                    width: 80px;
+                    object-fit: contain;
+                }
+                #header-sm-img{
+                    width: 80px;
+                }
+            </style>
+            <div id="header-body">
+                <div id="header-links">                    
+                    <div>Home</div>
+                    <div>Stories</div>
+                    <div>Pre-Ordering</div>
+                    <div>About</div>
+                </div>
+
+                <!-- Social media -->
+                <div id="header-social-media">
+                    <a href=""><div id="header-sm-box">
+                        <img id="header-sm-img" src="https://i.pinimg.com/originals/3f/29/23/3f2923684f3fc1509a03a327e72764b1.gif" alt="">
+                    </div></a>
+                    <a href=""><div id="header-sm-box">
+                        <img id="header-sm-img" src="https://i.pinimg.com/originals/52/7b/a5/527ba5513a72f1d28fa780a14d6511fd.gif" alt="">
+                    </div></a>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+            a
+        </div>
+        <div id="footer"></div>
+    </div>
+    
+</body>
+</html>

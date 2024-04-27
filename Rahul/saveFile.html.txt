@@ -1,4 +1,3 @@
-{% load static %}
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="https://images.emojiterra.com/google/android-11/512px/1f63c.png" type="image/x-icon">
@@ -19,9 +18,9 @@
             body{
                 background-color: white;
                 -webkit-text-fill-color: black;
-                height: 2500px;
+                height: 1200px;
                 display: grid;
-                grid-template-rows: 2fr 17fr 8fr;
+                grid-template-rows: 1fr 10fr 2fr;
                 row-gap: 20px;
                 margin: 0px;
             }
@@ -35,9 +34,9 @@
             body{
                 background-color: white;
                 -webkit-text-fill-color:black;
-                height: 1500px;
+                height: 1100px;
                 display: grid;
-                grid-template-rows: 1fr 11fr 2fr;
+                grid-template-rows: 1fr 10fr 1fr;
                 row-gap: 20px;
             }
             .section{
@@ -50,21 +49,6 @@
     
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 
 
 
@@ -142,9 +126,9 @@
                 <div id="nav-bar-option">Main</div>
             </a>
             <a class="a-nav" href="{% url 'projects' %}">
-                <div id="nav-bar-option">Ideas</div>
+                <div id="nav-bar-option">Projects</div>
             </a>
-            <a class="a-nav" href="{% url 'blog' %}">    
+            <a class="a-nav" href="">    
                 <div id="nav-bar-option">Blog</div>
             </a>
             <a class="a-nav" href="">    
@@ -164,7 +148,7 @@
                     height: 100%;
 
                     display: grid;
-                    grid-template-rows: 4fr 9fr;
+                    grid-template-rows: 2fr 11fr;
                     row-gap: 50px ;
                 }
 
@@ -197,13 +181,11 @@
                     font-size: 35px;
 
                     padding-bottom: 5px;
-                    padding-left: 3%;
-                    padding-right: 3%;
+                    padding-left: 10px;
                     width: 30%;
                     min-width: fit-content;
                  
                     margin-bottom: 10px;
-                    margin-left: 1px;
                     border-bottom: 2px solid gray;
                     -webkit-text-fill-color: white;   
                 }
@@ -211,8 +193,7 @@
                     padding-top: 10px;
                     display: grid;
                     grid-template-areas: " profilepic m-l-container m-l-container"
-                                         " quote-fact-container quote-fact-container quote-fact-container"
-                                         " ideaBox ideaBox ideaBox";
+                                         " quote-fact-container quote-fact-container quote-fact-container";
                     grid-template-columns: 1fr 2fr;
                     
                     width: 100%;
@@ -221,7 +202,7 @@
                 #main-right{
                     row-gap: 70px;
                     display: grid;
-                    grid-template-rows: 5fr 1fr 3fr ;
+                    grid-template-rows: 4fr 1fr 2fr ;
                     /* justify-content: center; */
 
                 }
@@ -269,7 +250,7 @@
                 #main-right{
                     row-gap: 20px;
                     display: grid;
-                    grid-template-rows: 3fr 1fr 3fr ;
+                    grid-template-rows: 4fr 1fr 2fr ;
                     
 
                 }
@@ -318,7 +299,6 @@
             <div id="main-left">
                 
                 <img id="profilepic" src="https://i.pinimg.com/736x/dc/d8/8e/dcd88e655dbab8bbd8ee251563d3eeff.jpg" alt="">
-                <!-- <img id="profilepic" src="{% static 'img/miles1.jpg' %}" alt=""> -->
                 <div id="m-l-container">
                     
                     <div id="name">
@@ -328,45 +308,6 @@
                         <div id="my-data-data">⚡ 21 years old</div>
                         <div id="my-data-data">👨‍🎓 CSE 3rd Year </div>
                         <div id="my-data-data">🎓 Sir MVIT Bangalore</div>
-                        <div id="my-data-data">👨🏻‍💻 CV intern <a style="-webkit-text-fill-color: rgb(140, 163, 255);" href="https://www.deepcept.ai/">@DeepceptAI</a></div>
-                    </div>
-
-                    <div id="social-data">
-                        <style>
-                            @media (max-width:800px){
-                                #social-data{
-                                    text-align: left;
-                                    /* padding-left: 10%; */
-                                }
-                                .img-social{
-                                    margin-top: 20px;
-                                    width: 20%;
-                                    max-width: 50px;
-                                    margin-right: 5%;
-                                }
-                            }
-                            @media (min-width:801px){
-                                #social-data{
-                                    text-align: left;
-                                    padding-left: 10%;
-                                }
-                                .img-social{
-                                    margin-top: 20px;
-                                    width: 20%;
-                                    max-width: 50px;
-                                    margin-right: 5%;
-                                }
-                            }
-                        </style>
-                        <a href="https://www.linkedin.com/in/rahul-jangra-b32a2322a/">
-                            <img class="img-social" src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png" alt="">
-                        </a>
-                        <a href="https://www.instagram.com/__curf__">
-                            <img class="img-social" src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png" alt="">
-                        </a>
-                        <a href="https://twitter.com/rstarjangra">
-                            <img class="img-social" src="https://img.icons8.com/?size=100&id=yoQabS8l0qpr&format=png" alt="">
-                        </a>
                     </div>
 
                     <style>
@@ -436,6 +377,10 @@
                             "🎃 Spooky fun ahead! 👻🕯️",
                         ];
 
+// Rest of the code remains the same
+
+
+                        // Function to simulate typing animation
                         function typeText(element, text, speed, callback) {
                         let i = 0;
                         const typingInterval = setInterval(() => {
@@ -445,11 +390,13 @@
                             } else {
                             clearInterval(typingInterval);
                             if (callback) {
-                                setTimeout(callback, 5000);
+                                setTimeout(callback, 5000); // Wait 1 second before starting the next quote
                             }
                             }
                         }, speed);
                         }
+
+                        // Function to display a random quote or fact with typing animation
                         function displayRandomQuoteOrFact() {
                         const container = document.getElementById("quote-fact-container");
                         const quoteFactElement = document.getElementById("quote-fact");
@@ -458,6 +405,7 @@
                         const randomIndex = Math.floor(Math.random() * quotesAndFacts.length);
                         const randomText = quotesAndFacts[randomIndex];
 
+                        // Reset typing bar animation
                         typingBar.style.animation = 'none';
                         void typingBar.offsetWidth;
                         typingBar.style.animation = 'typing 0.5s infinite';
@@ -465,6 +413,7 @@
                         typeText(quoteFactElement, randomText, 50, displayRandomQuoteOrFact);
                         }
 
+                        // Call the function initially after a 2-second delay
                         setTimeout(displayRandomQuoteOrFact, 2000);
 
                     </script>
@@ -473,85 +422,6 @@
                 <div id="quote-fact-container">
                     <p id="quote-fact"></p>
                     <div id="typing-bar"></div>
-                </div>
-
-                <div id="ideaBox">
-                    <style>
-                        @media (max-width:800px) {
-                            #ideaBox{
-                                margin-top: 20px;
-                                margin-left: 5%;
-                                text-align: left;
-                                
-                                width: 90%;
-                                height: 500px;
-
-                                -webkit-text-fill-color: white;
-                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                                grid-area: ideaBox;
-                                }
-                                .link-resources{
-                                    -webkit-text-fill-color: rgb(140, 163, 255);
-                                    font-size: 13px;
-                                }
-                                .techlink{
-
-                                }
-                        }
-                        @media (min-width:801px){
-                            #ideaBox{
-                                margin-top: 20px;
-                                margin-left: 5%;
-                                text-align: left;
-                                
-                                width: 90%;
-                                height: 500px;
-
-                                -webkit-text-fill-color: white;
-                                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                                }
-                                .link-resources{
-                                    -webkit-text-fill-color: rgb(140, 163, 255);
-                                    font-size: 13px;
-                                }
-                        }
-                    </style>
-
-                    <div>
-                        Top usefull links
-                    </div>
-
-                    <div class="techlink">
-                        <div>New Tech</div>
-                        <ul>
-                            <li><a class="link-resources" href="https://github.com/lllyasviel/Fooocus/?tab=readme-ov-file"><div>Fooocus</div></a></li>
-                            <li><a class="link-resources" href="https://civitai.com/"><div>civit ai</div></a></li>
-                        </ul>
-
-                        <div>Github and Open Source</div>
-                        <ul>
-                            <li><a class="link-resources" href="https://up-for-grabs.net/#/"><div>Open-Source beggar guide</div></a></li>
-                            <li><a class="link-resources" href="https://github.com/AlanChen4/Summer-2024-SWE-Internships"><div>Summer-2024-SWE-Internships</div></a></li>
-                            <li><a class="link-resources" href="https://github.com/vicoyeh/pointers-for-software-engineers?tab=readme-ov-file"><div>SWE pointers</div></a></li>
-                            <li><a class="link-resources" href="https://github.com/kdeldycke/awesome-engineering-team-management"><div>awesome-engineering-team-management</div></a></li>
-                        </ul>
-                    </div>
-                    <div class="techlink">
-                        <div>AI ML</div>
-                        <ul>
-                            <li><a class="link-resources" href="https://paperswithcode.com/"><div>paperswithcode</div></a></li>
-                            <li><a class="link-resources" href="https://www.deeplearning.ai/courses/machine-learning-specialization/"><div>machine-learning-specialization</div></a></li>
-                            <li><a class="link-resources" href="https://www.deeplearning.ai/courses/deep-learning-specialization/"><div>deep-learning-specialization</div></a></li>
-                            <li><a class="link-resources" href="https://developers.google.com/machine-learning/crash-course/"><div>Google ML</div></a></li>
-                            <li><a class="link-resources" href="https://ai.google/build?featured=learn_ai"><div>Google learn ai</div></a></li>
-                        </ul>
-                        
-                        <div>George Hotz</div>
-                        <ul>
-                            <li><a class="link-resources" href="https://geohot.com/"><div>Personal website</div></a></li>
-                            <li><a class="link-resources" href="https://github.com/commaai/openpilot"><div>Comma.ai:OpenPilot</div></a></li>
-                        </ul>
-                    </div>                            
                 </div>
             </div>
             <div id="main-right">
@@ -590,9 +460,8 @@
                                 font-family:Verdana, Geneva, Tahoma, sans-serif;
                                 font-size: 13px;
 
-                                height: 180px;
+                                height: 150px;
                                 width: 90%;
-                                max-width: 400px;
 
                                 background-position: 50% 50%;
                                 background-size: cover;
@@ -655,36 +524,30 @@
                         }
                     </style>
                     <div id="project-mainbox">
-                        
-                        <a href="{% url 'projects' %}">
-                            <div id="project-box" style="background-image: url(https://static.vecteezy.com/system/resources/thumbnails/027/376/701/small/monitor-lo-fi-retro-animation-video.jpg);">
-                                <div id="prj-name">
-                                    Operating System <br>
-                                    api <br>
-                                    Algorithms <br>
-                                    data Scrutures
-                                </div>
+                            
+                        <div id="project-box" style="background-image: url(https://static.vecteezy.com/system/resources/thumbnails/027/376/701/small/monitor-lo-fi-retro-animation-video.jpg);">
+                            <div id="prj-name">
+                                Operating System <br>
+                                api <br>
+                                Algorithms <br>
+                                data Scrutures
                             </div>
-                        </a>
+                        </div>
                         <!-- <div id="project-box">
                             <div id="prj-name">
                                 Data Science + Kaggle
                             </div>
                         </div> -->
-                        <a href="{% url 'projects' %}">
-                            <div id="project-box" style="background-image: url(https://img.freepik.com/premium-photo/heartshaped-electronic-device-with-complex-circuitry-fusion-human-emotions-machine-learning-concept-generative-ai-illustration_124717-2739.jpg);">
-                                <div id="prj-name">
-                                    Machine Learning
-                                </div>
+                        <div id="project-box" style="background-image: url(https://img.freepik.com/premium-photo/heartshaped-electronic-device-with-complex-circuitry-fusion-human-emotions-machine-learning-concept-generative-ai-illustration_124717-2739.jpg);">
+                            <div id="prj-name">
+                                Machine Learning
                             </div>
-                        </a>
-                        <a href="{% url 'projects' %}">
-                            <div id="project-box" style="background-image: url(https://images-platform.99static.com//60ymdkeAKMHeEuZlulWzS5niuzk=/0x0:1055x1055/fit-in/500x500/99designs-contests-attachments/74/74540/attachment_74540382);">
-                                <div id="prj-name">
-                                    Web Dev
-                                </div>
+                        </div>
+                        <div id="project-box" style="background-image: url(https://images-platform.99static.com//60ymdkeAKMHeEuZlulWzS5niuzk=/0x0:1055x1055/fit-in/500x500/99designs-contests-attachments/74/74540/attachment_74540382);">
+                            <div id="prj-name">
+                                Web Dev
                             </div>
-                        </a>
+                        </div>
                         <!-- <div id="project-box">
                             <div id="prj-name">
                                 Networking + api
@@ -695,14 +558,12 @@
                                 Linux Project
                             </div>
                         </div> -->
-                        
-                        <a href="{% url 'projects' %}">
-                            <div id="project-box" style="background-image: url(https://i.stack.imgur.com/Ph3Ou.jpg);">
-                                <div id="prj-name">
-                                    Python Software Project
-                                </div>
+                        <div id="project-box" style="background-image: url(https://i.stack.imgur.com/Ph3Ou.jpg);">
+                            <div id="prj-name">
+                                Python Software Project
                             </div>
-                        </a>
+                        </div>
+                        
                     </div>
                 </div>
                 <div id="section-stacks" style="text-align: center;">
@@ -712,30 +573,29 @@
                            #section-stacks{
                                /* background-image: linear-gradient(90deg, rgb(207, 207, 207) 100%, white 50% ); */
                                background-color: rgb(37, 35, 35);
-                               overflow: hidden;
                            }
                            #stack-data{
                                height: 150px;
-                               text-align: center;
                            }
                            .stacks{
                                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                               -webkit-text-fill-color: rgb(255, 255, 255);
-                               text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.715);
+                               -webkit-text-fill-color: rgb(0, 0, 0);
+                               text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.715);
                                font-weight: 500;
                                font-size: 12px;
 
                                padding-top:15px;
                                padding-bottom: 5px;
+                               /* height: 50px; */
                                line-height: 20px;
 
                                border: 2px solid gray;
-                               margin-right: 2%;
+                               /* height: 60px; */
 
                                width: 15%;
+                               /* max-width: 110px; */
                                border-radius: 10px;
                                display: inline-block;
-                               overflow: hidden;
 
                            }
                            #stack-head{
@@ -803,271 +663,38 @@
                        </div>
 
                        <div id="stack-data" >
-                           <div class="stacks" style="background-color: rgb(97, 122, 130);display: inline-block;">
+                           <div class="stacks" style="background-color: rgb(173, 216, 230);display: inline-block;">
                                Python| PyTorch| Tensor Flow| Keras| CUDA
                            </div>
-                           <div class="stacks"  style="background-color: rgb(132, 104, 104);">
+                           <div class="stacks"  style="background-color: rgb(228, 178, 178);">
                                Pandas| Numpy| streamlit
                            </div>
-                           <div class="stacks"  style="background-color: rgb(92, 116, 86);">
+                           <div class="stacks"  style="background-color: rgb(185, 230, 173);">
                                Red Hat| Ubantu
                            </div>
-                           <div class="stacks"   style="background-color: rgb(123, 127, 95);">
-                               Django| Html-Css| JS
+                           <div class="stacks"   style="background-color: rgba(221, 230, 173);">
+                               Django| Html-Css| Javascript
                            </div>
-                           <div class="stacks" style="background-color: rgb(107, 97, 130);">
-                               Docker| WSL
+                           <div class="stacks" style="background-color: rgba(193, 173, 230);">
+                               Docker| Kubernetes| WSL
                            </div>
                        </div>            
                </div>                 
 
                 <div id="section-profiles">
-                    <div id="profile-head">
-                        <style>
-                            
-                            @media (max-width:800px) {
-                                #profile-head{
-                                margin-left: 6%;
-                                margin-bottom: 35px;
-
-
-                                padding-right: 15px;
-                                font-size: 20px;
-                                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-                                width: fit-content;
-                                border-bottom: 2px solid gray;
-                            }
-                            }
-
-                            @media (min-width: 801px) {
-                                #profile-head{
-                                margin-left: 6%;
-                                /* margin-bottom: 35px; */
-
-
-                                padding-right: 15px;
-                                font-size: 20px;
-                                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-                                width: fit-content;
-                                border-bottom: 2px solid gray;
-                            } 
-                            }
-
-                        </style>
-                        Profiles
-                    </div>
-
-                    <style>
-                        @media (max-width:800px){
-                            #section-profiles{
-                                background-image: linear-gradient(90deg, white 50%, gray 50%);
-                            }
-                            .stats{
-                                padding-left: 5%;
-                                width: 90%;
-                                max-width: 400px;
-                            }
-                            .stat-name{
-                                width: 100%;
-                                text-align: center;
-                                border-bottom: 2px solid gray;
-
-                                margin-top: 15px;
-                                margin-bottom: 5px;
-                                font-size: 20px;
-
-                                font-weight: 400;
-                                font-style: italic;
-                                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-                            }
-                            #img-git2{
-                                display: none;
-                            }
-                        }
-
-                        @media (min-width:801px){
-                            #section-profiles{
-                                background-image: linear-gradient(90deg, white 50%, gray 50%);
-                                display: grid;
-                                column-gap: 5%;
-                                grid-template-areas: "stat-name stat-name"
-                                                    "LC git"
-                                                    "img-LC img-git"
-                                                    "img-LC img-git"
-                                                    "img-LC img-git2"
-                                                    "img-LC img-git2"
-                                                    "img-LC img-git2"
-                                                    "img-LC img-git2"
-                                                    "img-LC img-git2"
-                                                    "img-LC img-git2"
-                                                    "img-LC img-git2"
-                                                    "img-LC img-git2"
-                                                    "img-LC img-git2"
-                                                    "img-LC img-git2"
-                                                    "img-LC img-git2"
-                                                    "img-LC img-git2"
-                                ;
-
-                            }
-                            #stat-name{
-                                grid-area: stat-name;
-                            }
-                            #img-LC{
-                                grid-area: img-LC;
-                                max-width: 300px;
-                            }
-                            #img-git{
-                                grid-area: img-git;
-                                max-width: 300px;
-                            }
-                            #LC{
-                                grid-area: LC;
-                            }
-                            #git{
-                                grid-area: git;
-                            }
-                            #img-git2{
-                                grid-area: img-git2;
-                                max-width: 300px;
-                            }
-
-                            .stats{
-                                width: 95%;
-                                display: inline-block;
-                            }
-                            .stat-name{
-                                display: inline-block;
-                                width: fit-content;
-                                text-align: center;
-                                border-bottom: 2px solid gray;
-
-                                margin-top: 15px;
-                                margin-bottom: 5px;
-                                font-size: 20px;
-
-                                font-weight: 400;
-                                font-style: italic;
-                                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-                            }
-                        }
-                    </style>
-                    
-                    <div class="stat-name" id="LC">
-                        LeetCode
-                    </div>
-                    <img class="stats" id="img-LC" src="https://leetcard.jacoblin.cool/Rahul_Jangra?theme=dark&font=Cousine&ext=heatmap" alt="">
-                    
-                    <div class="stat-name" id="git">
-                        Github
-                    </div>
-                    <img class="stats" id="img-git" src="https://github-readme-stats.vercel.app/api?username=leonado10000" alt="">
-                    <img class="stats" id="img-git2" src="https://github-readme-stats.vercel.app/api/top-langs/?username=leonado10000&langs_count=8&layout=compact&border_radius=40&theme=radical&length=80" alt="">
-                    
+                    Profiles
+                    LeetCode
+                    Github
+                    Kaggle
+                    Certificaetes
+    
                 </div>
 
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
     <div class="section" id="foot-section">
-
-        <style>
-            @media (max-width:800px){
-                #foot-section{
-                    background-color: black;
-                    /* margin: 10px;s */
-                    padding-left: 20px;
-                    padding-right: 20px;
-                    -webkit-text-fill-color: white;
-                }
-                .cert-link{
-                    -webkit-text-fill-color: lightblue;
-                    text-decoration: none;
-                }
-                td{
-                    /* border: 1px solid gold; */
-                    height: 40px;
-                    /* column-gap: 15px; */
-                }
-            }
-            @media (min-width:801px){
-                #foot-section{
-                    background-color: black;
-                    /* margin: 10px;s */
-                    padding-left: 20px;
-                    padding-right: 20px;
-                    -webkit-text-fill-color: white;
-                }
-                .cert-link{
-                    -webkit-text-fill-color: lightblue;
-                    text-decoration: none;
-                }
-                td{
-                    /* border: 1px solid gold; */
-                    height: 40px;
-                    /* column-gap: 15px; */
-                }
-            }
-        </style>
-        <div>
-            <a href="https://www.reddit.com/user/Junior-Salt3181">
-                <img class="img-social" src="https://img.icons8.com/?size=100&id=h3FOPWMfgNnV&format=png" alt="">
-            </a>
-            <a href="https://github.com/leonado10000">
-                <img class="img-social" src="https://img.icons8.com/?size=100&id=AZOZNnY73haj&format=png" alt="">
-            </a>
-            </div>
-        <div>
-
-            <table style="display: inline-block;">
-                <thead>
-                    <th></th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <a class="cert-link" href="https://certificates.simplicdn.net/share/4397060_1688564792.pdf">Data Science with Python</a>
-                        </td>
-                        <td>
-                            simply learn
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="cert-link" href="https://www.kaggle.com/learn/certification/leonado10000/pandas">Pandas</a>
-                        </td>
-                        <td>
-                            Kaggle
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="cert-link" href="https://www.kaggle.com/learn/certification/leonado10000/intro-to-machine-learning">intro-to-machine-learning</a>
-                        </td>
-                        <td>
-                            kaggle
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a class="cert-link" href="https://onlinecourses.nptel.ac.in/noc23_cs104/preview">Applied Accelerated Artificial Intelligence</a>
-                        </td>
-                        <td>
-                            NPTEL
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <img style="display: inline-block;height: 200px;" src="https://res.cloudinary.com/practicaldev/image/fetch/s--5Fixifiz--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_800/https://preview.redd.it/thenewpositiontitle-v0-19xa1s94ajmb1.png%3Fauto%3Dwebp%26s%3D07c15119b4d1807afb3a3e497972cb2a3a24e5e0" alt="what">
-        </div>
+        foot section
     </div>
 
 
