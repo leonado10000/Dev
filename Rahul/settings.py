@@ -12,9 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 POSTGRES_URL="postgres://default:5NW7DHvTbdEQ@ep-muddy-star-a4326164-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
