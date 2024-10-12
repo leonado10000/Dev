@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-+=$dwy-vf#wx=@y$-w^$%z=dp+z%p^nurm-o_t-rj(*zul2-1@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['RahulJangra.vercel.app','.vercel.app','192.168.0.187','','*','172.20.10.7']
 
@@ -35,8 +37,7 @@ INSTALLED_APPS = [
     'blog',
     "Portfolio",
     'Anime',
-    # 'MyCafe',
-    # 'soloLeveling',
+    'myProject',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -60,7 +61,7 @@ ROOT_URLCONF = "Rahul.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'Portfolio')],
+        "DIRS": [os.path.join(BASE_DIR, 'Portfolio'), os.path.join(BASE_DIR, 'myProject')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -81,11 +82,13 @@ WSGI_APPLICATION = "Rahul.wsgi.application"
 
 DATABASES = {
         'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'OPTIONS': {
-            'timeout': 20,  # Specify the timeout option if needed
-        },
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME' : os.environ.get("POSTGRES_DATABASE"),
+        'HOST': os.environ.get("POSTGRES_HOST"),
+        'URL': os.environ.get("postgres://default:5NW7DHvTbdEQ@ep-muddy-star-a4326164-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"),
+        'PRISMA_URL': os.environ.get("postgres://default:5NW7DHvTbdEQ@ep-muddy-star-a4326164-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require&pgbouncer=true&connect_timeout=15"),
+        'USER': os.environ.get("POSTGRES_USER"),
+        'PASSWORD' : os.environ.get("POSTGRES_PASSWORD")
     },
 }
 
@@ -125,8 +128,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build', 'static')
-STATICFILES_DIRS = os.path.join(BASE_DIR ,'static'),
+STATIC_ROOT = "allStaticFiles"
+STATICFILES_DIRS = [BASE_DIR, os.path.join(BASE_DIR,'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

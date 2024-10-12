@@ -1,6 +1,18 @@
 from django.shortcuts import render
-from .models import Data
+from .models import Data,Topics
 import datetime
+import os
+# from langchain_nvidia_ai_endpoints import ChatNVIDIA
+# from langchain_core.messages import HumanMessage,SystemMessage
+
+# nvidiakey = "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"
+# os.environ["NVIDIA_API_KEY"] = nvidiakey
+
+# llm = ChatNVIDIA(
+#     model="meta/llama-3.1-405b-instruct",
+#     api_key="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"
+# )
+
 import random
 # Create your views here.
 
@@ -14,33 +26,41 @@ imageLink = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxDUb0LpmHyTRqbsnXuuvmQaqKFydMeh1HvA",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiFpWwcWR9mhkJhRbNdQQHTRKFMxWnMWcT8w",
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHf31DYC_7zxXdVV76-rfAY2Gm8DJX5lH0qQ",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiwDZaaetgFdlu5b6m_NrmP3HFDa-EO7SSXA",
-    
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiwDZaaetgFdlu5b6m_NrmP3HFDa-EO7SSXA", 
 ]
 
 
-def blog(request):
-    # print(request)
+def blog(request, topic_id=1):    
     if request.method == "POST":
-        test = datetime.datetime.now().__str__()
-        # print(test[:4], test[5:7], test[8:10], test[11:13], test[14:16])
-        year = int(test[:4])
-        mnt = int(test[5:7])
-        dy = int(test[8:10])
-        hr = int(test[11:13])
-        mn = int(test[14:16])
+        # print(request.POST)
+        try:
+            if request.POST['message_id'] != '':
+                a = Data.objects.get(id=request.POST['message_id'])
+                a.likes += 1
+                a.save()
+            elif request.POST['delete_message_id'] != '':
+                a = Data.objects.get(id = request.POST['delete_message_id'])
+                a.delete()
+                b = Topics.objects.get(id=request.POST['topic_id'])
+                b.number_of_messages -= 1
+                b.save()
+            else:
+                # result = llm.invoke(
+                    # [SystemMessage(f"Summarize the following content,remove any offiensive or insulting words or phrases, do not to reduce word count significantly, only return the summarized part, do not writw anythings extra: {request.POST['a']}")]
+                # )
+                a = Data(textfield=request.POST['a'],sender=request.META.get('REMOTE_ADDR'))
+                a.topic_obj = Topics.objects.get(id=request.POST['topic_id'])
+                b = Topics.objects.get(id=request.POST['topic_id'])
+                a.save()
+                b.number_of_messages += 1
+                b.save()
+        except:
+            print("error ends here 5")
 
-        req_headers = request.META
-        ip_addr = req_headers.get('REMOTE_ADDR')
-        print(ip_addr)
-        a = Data(textfield=request.POST['a'],time=datetime.datetime(year, mnt, dy, hr, mn, tzinfo=datetime.timezone.utc),sender=ip_addr)
-        a.save()
-
-    data = Data.objects.all().values()
-    rel_data = []
-    for x in data:
-        rel_data.append([x["id"],x["textfield"],x["time"],x["sender"],random.choice(imageLink)])
-        
+    data = Data.objects.filter(topic_obj=topic_id).order_by('-likes')
+    topics = Topics.objects.all().order_by('id')
     return render(request, 'main.html' ,{
-        "data":rel_data[::-1],
+        "data":data,
+        "topics":topics,
+        "topic_id":topic_id
     })
