@@ -17,7 +17,14 @@ from dotenv import load_dotenv
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+POSTGRES_URL="postgres://default:5NW7DHvTbdEQ@ep-muddy-star-a4326164-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+POSTGRES_PRISMA_URL="postgres://default:5NW7DHvTbdEQ@ep-muddy-star-a4326164-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require&pgbouncer=true&connect_timeout=15"
+POSTGRES_URL_NO_SSL="postgres://default:5NW7DHvTbdEQ@ep-muddy-star-a4326164-pooler.us-east-1.aws.neon.tech:5432/verceldb"
+POSTGRES_URL_NON_POOLING="postgres://default:5NW7DHvTbdEQ@ep-muddy-star-a4326164.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"
+POSTGRES_USER="default"
+POSTGRES_HOST="ep-muddy-star-a4326164-pooler.us-east-1.aws.neon.tech"
+POSTGRES_PASSWORD="5NW7DHvTbdEQ"
+POSTGRES_DATABASE="verceldb"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -83,12 +90,12 @@ WSGI_APPLICATION = "Rahul.wsgi.application"
 DATABASES = {
         'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME' : os.environ.get("POSTGRES_DATABASE"),
-        'HOST': os.environ.get("POSTGRES_HOST"),
-        'URL': os.environ.get("postgres://default:5NW7DHvTbdEQ@ep-muddy-star-a4326164-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require"),
-        'PRISMA_URL': os.environ.get("postgres://default:5NW7DHvTbdEQ@ep-muddy-star-a4326164-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require&pgbouncer=true&connect_timeout=15"),
-        'USER': os.environ.get("POSTGRES_USER"),
-        'PASSWORD' : os.environ.get("POSTGRES_PASSWORD")
+        'NAME' : POSTGRES_DATABASE,
+        'HOST': POSTGRES_HOST,
+        'URL': POSTGRES_URL,
+        'PRISMA_URL': POSTGRES_PRISMA_URL,
+        'USER': POSTGRES_USER,
+        'PASSWORD' : POSTGRES_PASSWORD
     },
 }
 
