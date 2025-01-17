@@ -32,9 +32,9 @@ POSTGRES_DATABASE="verceldb"
 SECRET_KEY = "django-insecure-+=$dwy-vf#wx=@y$-w^$%z=dp+z%p^nurm-o_t-rj(*zul2-1@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['RahulJangra.vercel.app','.vercel.app','192.168.0.187','','*','172.20.10.7']
+ALLOWED_HOSTS = ['RahulJangra.vercel.app','.vercel.app','192.168.0.187','*','172.20.10.7','192.168.208.13']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "Portfolio",
     'Anime',
     'myProject',
+    'else',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

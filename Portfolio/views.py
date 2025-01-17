@@ -42,6 +42,7 @@ certificates = [
 
 
 def index(request):
+    # print(request.__dict__)
     n = 0
     if n :
         return render(request, 'dist/index.html',{

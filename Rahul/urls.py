@@ -26,6 +26,7 @@ urlpatterns = [
     path("Anime/", include("Anime.urls")),
     path("blog/", include("blog.urls")),
     path("pj/", include("myProject.urls")),
+    path("else/", include("else.urls")),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
