@@ -1,15 +1,10 @@
 <div id="main-right">
-    
-    
-    
-    
-    
-    
     <div id="section-projects">
 
         <div id="section-head">
             Projects
         </div>
+
         <style>
             @media (max-width: 800px) {
                 #section-head{
@@ -104,29 +99,62 @@
             }
         </style>
         <div id="project-mainbox">
-            {% for data in projects %}
+            
             <a href="{% url 'projects' %}">
-                <div id="project-box" style="background-image: url('{{ data.0 }}');">
+                <div id="project-box" style="background-image: url(https://static.vecteezy.com/system/resources/thumbnails/027/376/701/small/monitor-lo-fi-retro-animation-video.jpg);">
                     <div id="prj-name">
-                        {{ data.1 }}
+                        Operating System <br>
+                        api <br>
+                        Algorithms <br>
+                        data Scrutures
                     </div>
                 </div>
             </a>
-            {% endfor %}
+            <!-- <div id="project-box">
+                <div id="prj-name">
+                    Data Science + Kaggle
+                </div>
+            </div> -->
+            <a href="https://github.com/leonado10000/Emotion-Detector">
+                <div id="project-box" style="background-image: url(https://img.freepik.com/premium-photo/heartshaped-electronic-device-with-complex-circuitry-fusion-human-emotions-machine-learning-concept-generative-ai-illustration_124717-2739.jpg);">
+                    <div id="prj-name">
+                        <ul>
+                            <li>EMOTION DETECTOR</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+            <a href="{% url 'projects' %}">
+                <div id="project-box" style="background-image: url(https://images-platform.99static.com//60ymdkeAKMHeEuZlulWzS5niuzk=/0x0:1055x1055/fit-in/500x500/99designs-contests-attachments/74/74540/attachment_74540382);">
+                    <div id="prj-name">
+                        Web Dev
+                    </div>
+                </div>
+            </a>
+            <!-- <div id="project-box">
+                <div id="prj-name">
+                    Networking + api
+                </div>
+            </div>
+            <div id="project-box">
+                <div id="prj-name">
+                    Linux Project
+                </div>
+            </div> -->
+            
+            <a href="https://github.com/leonado10000/socket">
+                <div id="project-box" style="background-image: url(https://i.stack.imgur.com/Ph3Ou.jpg);">
+                    <div id="prj-name">
+                        <ul>
+                            <li>Sockets Chatroom</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
     <div id="section-stacks" style="text-align: center;">
+
         <style>
            @media(max-width: 800px){
                #section-stacks{
@@ -223,23 +251,23 @@
            </div>
 
            <div id="stack-data" >
-                <div class="stacks" style="background-color: rgb(97, 122, 130);display: inline-block;">
-                    Python| PyTorch| Tensor Flow| Keras| CUDA
-                </div>
-                
-                {% for data in stacks %}
-                    <div class="stacks"  style="background-color: {{ data.0 }};">
-                        {{ data.1 }}
-                    </div>
-                {% endfor %}
-               
+               <div class="stacks" style="background-color: rgb(97, 122, 130);display: inline-block;">
+                   Python| PyTorch| Tensor Flow| Keras| CUDA
+               </div>
+               <div class="stacks"  style="background-color: rgb(132, 104, 104);">
+                   Pandas| Numpy| streamlit
+               </div>
+               <div class="stacks"  style="background-color: rgb(92, 116, 86);">
+                   Red Hat| Ubantu
+               </div>
+               <div class="stacks"   style="background-color: rgb(123, 127, 95);">
+                   Django| Html-Css| JS
+               </div>
+               <div class="stacks" style="background-color: rgb(107, 97, 130);">
+                   Docker| WSL
+               </div>
            </div>            
    </div>                 
-
-
-
-
-
 
     <div id="section-profiles">
         <div id="profile-head">

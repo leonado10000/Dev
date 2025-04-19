@@ -1,16 +1,20 @@
+{% load static %}
 <div id="main-left">
-            
-    <img id="profilepic" src="https://i.pinimg.com/736x/dc/d8/8e/dcd88e655dbab8bbd8ee251563d3eeff.jpg" alt="">
-
+                
+    <iframe id="profilepic" src="https://drive.google.com/file/d/1NJdwW9-66hdmI6BSrWPnwbnis-ZfwaML/preview" allow="autoplay"></iframe>
+    <!-- <img id="profilepic" src="https://drive.usercontent.google.com/download?id=1NJdwW9-66hdmI6BSrWPnwbnis-ZfwaML&export=view&authuser=0" alt=""> -->
+    <!-- <img id="profilepic" src="https://i.pinimg.com/736x/dc/d8/8e/dcd88e655dbab8bbd8ee251563d3eeff.jpg" alt=""> -->
+    <!-- <img id="profilepic" src="{% static 'img/miles1.jpg' %}" alt=""> -->
+    <div id="m-l-container">
         
         <div id="name">
             Rahul Jangra
         </div>
         <div id="my-data">
-            <div id="my-data-data">⚡ 21 years old</div>
-            <div id="my-data-data">👨‍🎓 CSE 3rd Year </div>
+            <div id="my-data-data">⚡ 23 years old</div>
+            <div id="my-data-data">👨‍🎓 CSE 4rd Year </div>
             <div id="my-data-data">🎓 Sir MVIT Bangalore</div>
-            <div id="my-data-data">👨🏻‍💻 CV intern <a style="-webkit-text-fill-color: rgb(140, 163, 255);" href="https://www.deepcept.ai/">@DeepceptAI</a></div>
+            <div id="my-data-data">👨🏻‍💻 ML guy </div>
         </div>
 
         <div id="social-data">
@@ -151,10 +155,78 @@
 
         </script>
 
+    </div>
     <div id="quote-fact-container">
         <p id="quote-fact"></p>
         <div id="typing-bar"></div>
     </div>
 
+    <div id="ideaBox">
+        <style>
+            @media (max-width:800px) {
+                #ideaBox{
+                    margin-top: 20px;
+                    margin-left: 5%;
+                    text-align: left;
+                    
+                    width: 90%;
+                    height: 500px;
 
+                    -webkit-text-fill-color: white;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    grid-area: ideaBox;
+                    }
+                    .link-resources{
+                        -webkit-text-fill-color: rgb(140, 163, 255);
+                        font-size: 13px;
+                    }
+                    .techlink{
+
+                    }
+            }
+            @media (min-width:801px){
+                #ideaBox{
+                    margin-top: 20px;
+                    margin-left: 5%;
+                    text-align: left;
+                    
+                    width: 90%;
+                    height: 500px;
+
+                    -webkit-text-fill-color: white;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    }
+                    .link-resources{
+                        -webkit-text-fill-color: rgb(140, 163, 255);
+                        font-size: 13px;
+                    }
+            }
+        </style>
+
+
+        <div class="techlink">
+            <div>New Tech</div>
+            <ul>
+                <li><a class="link-resources" href="https://github.com/lllyasviel/Fooocus/?tab=readme-ov-file"><div>Fooocus</div></a></li>
+                <li><a class="link-resources" href="https://civitai.com/"><div>civit ai</div></a></li>
+            </ul>
+
+            <div>Github and Open Source</div>
+            <ul>
+                <li><a class="link-resources" href="https://up-for-grabs.net/#/"><div>Open-Source beggar guide</div></a></li>
+            </ul>
+        </div>
+        <div class="techlink">
+            <div>AI ML</div>
+            <ul>
+                <li><a class="link-resources" href="https://paperswithcode.com/"><div>paperswithcode</div></a></li>
+            </ul>
+            
+            <div>Projects hall of Shame</div>
+            <ul>
+                <li><a class="link-resources" href="https://nitinsingh45.github.io/Dowry-Predictor/"><div>Dowry-Predictor</div></a></li>
+                <li><a class="link-resources" href="https://github.com/commaai/openpilot"><div>Comma.ai:OpenPilot</div></a></li>
+            </ul>
+        </div>                            
+    </div>
 </div>

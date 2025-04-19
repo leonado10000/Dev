@@ -1,3 +1,4 @@
+{% load static %}
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="https://images.emojiterra.com/google/android-11/512px/1f63c.png" type="image/x-icon">
@@ -110,8 +111,9 @@
     </style>
 
     {% include 'dist/head.html' %}
+
     
-    <style>
+    <style> 
         @media(max-width: 800px){
             #main-container{
                 /* margin-left: 5%;
@@ -119,7 +121,7 @@
                 height: 100%;
 
                 display: grid;
-                grid-template-rows: 2fr 11fr;
+                grid-template-rows: 4fr 9fr;
                 row-gap: 50px ;
             }
 
@@ -166,7 +168,8 @@
                 padding-top: 10px;
                 display: grid;
                 grid-template-areas: " profilepic m-l-container m-l-container"
-                                     " quote-fact-container quote-fact-container quote-fact-container";
+                                     " quote-fact-container quote-fact-container quote-fact-container"
+                                     " ideaBox ideaBox ideaBox";
                 grid-template-columns: 1fr 2fr;
                 
                 width: 100%;
@@ -207,7 +210,7 @@
             #profilepic{
                 margin-bottom: 10%;
                 border-radius: 25px;
-
+                height:290;
                 min-width: 140px;
                 width: 60%;
                 border: 2px solid gray;
@@ -269,6 +272,7 @@
         }
     </style>
     <div id="main-container">
+
 
         {% include 'dist/left_main.html' %}
         {% include 'dist/right_main.html' %}

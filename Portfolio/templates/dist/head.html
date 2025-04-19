@@ -1,3 +1,4 @@
+
 <div class="section" id="head-section">
     <style>
         @media(max-width: 800px){
@@ -69,11 +70,11 @@
         <a class="a-nav" href="{% url 'projects' %}">
             <div id="nav-bar-option">Ideas</div>
         </a>
-        <a class="a-nav" href="{% url 'blog' %}">    
+        <a class="a-nav" href="{% url 'blog' 1 %}">    
             <div id="nav-bar-option">Blog</div>
         </a>
-        <a class="a-nav" href="">    
-            <div id="nav-bar-option">Else</div>
+        <a class="a-nav" href="{% url 'else' %}">    
+            <div id="nav-bar-option">Leave a comment for me</div>
         </a>
     </div>
 </div>
