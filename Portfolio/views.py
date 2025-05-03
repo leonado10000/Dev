@@ -37,10 +37,13 @@ certificates = [
 ]
 
 
+def decoratorTest(x):
+    def hello(req):
+        print(f"=====================\n Hello, from : {x.__name__}\n===============")
+        return x(req)
+    return hello
 
-
-
-
+@decoratorTest
 def index(request):
     n = 1
     if n :
@@ -51,8 +54,10 @@ def index(request):
         })
     return render(request, 'v1/index.html')
 
+@decoratorTest
 def projects(request):
     return render(request, 'v1/projects.html')
 
+@decoratorTest
 def v2(request):
 	return render(request, 'v2/base.html')
