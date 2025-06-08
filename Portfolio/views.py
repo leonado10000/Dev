@@ -39,7 +39,7 @@ certificates = [
 
 def decoratorTest(x):
     def hello(req):
-        print(f"=====================\n Hello, from : {x.__name__}\n===============")
+        print(f"=====================\n Hello, from : {x.__name__}\n=====================")
         return x(req)
     return hello
 
@@ -56,7 +56,9 @@ def index(request):
 
 @decoratorTest
 def projects(request):
-    return render(request, 'v1/projects.html')
+    return render(request, 'v1/projects.html'  , {
+        "theme": {"text_color": "white", "bg_color": "#1e1e1e", "bg_border": "transparent","border_radius": "10px"}
+    })
 
 @decoratorTest
 def v2(request):
