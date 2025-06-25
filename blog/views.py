@@ -31,8 +31,8 @@ imageLink = [
 
 
 def blog(request, topic_id=1):  
-    if request.META['REMOTE_ADDR'] == "152.57.97.132":
-        return HttpResponse("You are not allowed to access this page.")
+    if request.META['REMOTE_ADDR'].startswith("223.231."): 
+        return HttpResponse("Thejas tmkc. Bhag bsdk")
     if request.method == "POST":
         # print(request.POST)
         try:
