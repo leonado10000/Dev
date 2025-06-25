@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'blog',
     "Portfolio",
     'Anime',
-    'myProject',
+    'myProject',        
     'else',
     "django.contrib.admin",
     "django.contrib.auth",

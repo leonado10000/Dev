@@ -1,0 +1,38 @@
+{% include 'dist/head-dark.html' %}
+
+<h2>Incoming Visitor Details</h2>
+<table border="1" cellspacing="0" cellpadding="8">
+    <thead>
+        <tr>
+            <th>Detail</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>IP Address (REMOTE_ADDR)</td>
+            <td>{{ visitors.REMOTE_ADDR }}</td>
+        </tr>
+        <tr>
+            <td>User Agent (HTTP_USER_AGENT)</td>
+            <td>{{ visitors.HTTP_USER_AGENT }}</td>
+        </tr>
+        <tr>
+            <td>Referer (HTTP_REFERER)</td>
+            <td>{{ visitors.HTTP_REFERER|default:"(Not available)" }}</td>
+        </tr>
+        <tr>
+            <td>Accepted Language (HTTP_ACCEPT_LANGUAGE)</td>
+            <td>{{ visitors.HTTP_ACCEPT_LANGUAGE }}</td>
+        </tr>
+        <tr>
+            <td>Accepted Encoding (HTTP_ACCEPT_ENCODING)</td>
+            <td>{{ visitors.HTTP_ACCEPT_ENCODING }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br><hr><br>
+
+
+{% include 'dist/foot.html' %}

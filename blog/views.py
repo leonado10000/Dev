@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from .models import Data,Topics
 import datetime
 import os
@@ -30,7 +30,9 @@ imageLink = [
 ]
 
 
-def blog(request, topic_id=1):    
+def blog(request, topic_id=1):  
+    if request.META['REMOTE_ADDR'] == "152.57.97.132":
+        return HttpResponse("You are not allowed to access this page.")
     if request.method == "POST":
         # print(request.POST)
         try:
