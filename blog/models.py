@@ -8,6 +8,7 @@ class Data(models.Model):
     sender = models.CharField(max_length=500,null=True)
     likes = models.IntegerField(default=0)
     topic_obj = models.ForeignKey("Topics", on_delete=models.CASCADE)
+    banned = models.BooleanField(default=False)
 
     def __str__(self) -> str:
         return f"{self.id}. {self.sender} ({self.time}): {self.textfield}, TOPIC:{self.topic_obj}"

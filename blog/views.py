@@ -31,10 +31,10 @@ imageLink = [
 
 
 def blog(request, topic_id=1):  
-    if request.META['REMOTE_ADDR'] in ["223.231.142.33", "95.164.34.251", "152.57.119.249", "124.217.249.48"]: 
-        return HttpResponse("Thejas tmkc. Bhag bsdk")
+    banned_ips = [x.sender for x in Data.objects.all() if x.banned]
+    if request.META['REMOTE_ADDR'] in banned_ips: 
+        return HttpResponse("Ya banned mfer, you can't access this site. Contact the admin if you think this is a mistake.")
     if request.method == "POST":
-        # print(request.POST)
         try:
             if request.POST['message_id'] != '':
                 a = Data.objects.get(id=request.POST['message_id'])
@@ -47,9 +47,6 @@ def blog(request, topic_id=1):
                 b.number_of_messages -= 1
                 b.save()
             else:
-                # result = llm.invoke(
-                    # [SystemMessage(f"Summarize the following content,remove any offiensive or insulting words or phrases, do not to reduce word count significantly, only return the summarized part, do not writw anythings extra: {request.POST['a']}")]
-                # )
                 a = Data(textfield=request.POST['a'],sender=request.META.get('REMOTE_ADDR'))
                 a.topic_obj = Topics.objects.get(id=request.POST['topic_id'])
                 b = Topics.objects.get(id=request.POST['topic_id'])
@@ -59,10 +56,30 @@ def blog(request, topic_id=1):
         except:
             print("error ends here 5")
 
-    data = Data.objects.filter(topic_obj=topic_id).order_by('-likes')
+    data = Data.objects.filter(topic_obj=topic_id).order_by('-time')
     topics = Topics.objects.all().order_by('id')
     return render(request, 'main.html' ,{
         "data":data,
         "topics":topics,
         "topic_id":topic_id
     })
+
+def banning(request):
+    if request.method == "POST":
+        print(request.POST)
+        try:
+            updated_count = Data.objects.filter(sender=request.POST['banning_ip']).update(banned=True)
+            return HttpResponse("Banned:", updated_count)
+        except Exception as e:
+            print("error ends here 6", e)
+    return HttpResponse("Banned")
+
+def unbanning(request):
+    if request.method == "POST":
+        print(request.POST)
+        try:
+            updated_count = Data.objects.filter(sender=request.POST['banning_ip']).update(banned=False)
+            return HttpResponse("unBanned:", updated_count)
+        except Exception as e:
+            print("error ends here 6", e)
+    return HttpResponse("UnBanned")

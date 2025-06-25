@@ -308,16 +308,26 @@
                             <div id="txt-date">
                                 <div id="ip-addr">
                                     by: {{ message.sender }}</div>
-                                    {{ message.time }}
+                                    {{ message.time }} <br>
+                                    {% if message.banned %}
+                                        <div style="background-color: red;width: max-content;">(BANNED)</div>
+                                    {% else %}
+                                    {% endif %}
                             </div>
-                            
+                            {% if not message.banned or user.is_authenticated %}
                             <div id="txt">{{ message.textfield|capfirst }}</div>
+                            {% else %}
+                                <div id="txt">[REDACTED]</div>
+                            {% endif %}
                         </div>
                         <div class="text-box">
                             <form action="{% url 'blog' topic_id %}" method="post">
+                                {% if not message.banned or user.is_authenticated %}
                                 {% csrf_token %}
                                 <input type="hidden" name="message_id" value="{{ message.id }}">
                                 <button type="submit" style="border-radius: 50%;height: 40px;background-color: white;font-weight: 600;">🩵 {{ message.likes }}</button>
+                                {% else %}
+                                {% endif %}
                             </form>
                             <form action="{% url 'blog' topic_id %}" method="post">
                                 {% csrf_token %}
@@ -325,6 +335,24 @@
                                     <input type="hidden" name="delete_message_id" value="{{ message.id }}">
                                     <input type="hidden" name="message_id" value="">
                                     <button type="submit" style="border-radius: 50%;height: 40px;background-color: lightpink;font-weight: 600;">Delete</button>
+                                {% else %}
+                                {% endif %}
+                            </form>
+                                                        
+                            <form action="{% url 'ban' %}" method="post">
+                                {% csrf_token %}
+                                {% if user.is_authenticated %}
+                                    <input type="hidden" name="banning_ip" value="{{ message.sender }}">
+                                    <button type="submit" style="border-radius: 50%;height: 40px;background-color: rgb(94, 94, 94);font-weight: 600;">ban</button>
+                                {% else %}
+                                {% endif %}
+                            </form>
+                            
+                            <form action="{% url 'unban' %}" method="post">
+                                {% csrf_token %}
+                                {% if user.is_authenticated %}
+                                    <input type="hidden" name="banning_ip" value="{{ message.sender }}">
+                                    <button type="submit" style="border-radius: 50%;height: 40px;background-color: rgb(34, 120, 0);font-weight: 600;">unban</button>
                                 {% else %}
                                 {% endif %}
                             </form>
