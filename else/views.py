@@ -3,6 +3,8 @@ import os
 import json
 import random as rn
 from django.conf import settings
+from Portfolio.views import welcoming_user
+from Portfolio.models import Visitor
 # Create your views here.
 
 s = [
@@ -14,6 +16,7 @@ s = [
     "Escape Lies, Seek Euphoria"
 ]
 
+@welcoming_user
 def func(request):
     i = rn.randint(0,len(s)-1)
     return render(request, "else.html", {
@@ -21,12 +24,15 @@ def func(request):
         "theme": {"text_color": "#ffefd5", "bg_color": "#a76b47", "bg_border": "transparent","border_radius": "5px"}
     })
 
+@welcoming_user
 def WebResume(request):
     return render(request,"WebResume.html")
 
+@welcoming_user
 def games_home(request):
     return render(request,"games/games_home.html")
 
+@welcoming_user
 def terminal_view(request):
     themes = {}
     with open(os.path.join(settings.BASE_DIR,'else','static','themes.json'), 'r') as f:
@@ -44,7 +50,8 @@ def terminal_view(request):
     }
     return render(request, 'terminal.html', context)
 
+@welcoming_user
 def visitors(request):
     return render(request, "visitors.html", {
-        "visitors": request.META
+        "visitors": Visitor.objects.all()
     })

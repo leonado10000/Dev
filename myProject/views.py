@@ -1,8 +1,10 @@
 import datetime
 from django.shortcuts import render
 from .models import projectTable
+from Portfolio.views import welcoming_user 
 
 # Create your views here.
+@welcoming_user
 def base(request):
     if request.method == "POST":
         print("something",request.POST,type(request.POST['start-date']))
@@ -24,6 +26,7 @@ def base(request):
         "data":data
     })
 
+@welcoming_user
 def delete(request):
     obj = projectTable.objects.filter(id=request.POST['project-id'])[0]
     obj.delete()

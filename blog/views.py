@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse
 from .models import Data,Topics
 import datetime
 import os
+from Portfolio.views import welcoming_user
 # from langchain_nvidia_ai_endpoints import ChatNVIDIA
 # from langchain_core.messages import HumanMessage,SystemMessage
 
@@ -29,7 +30,7 @@ imageLink = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiwDZaaetgFdlu5b6m_NrmP3HFDa-EO7SSXA", 
 ]
 
-
+@welcoming_user
 def blog(request, topic_id=1):  
     banned_ips = [x.sender for x in Data.objects.all() if x.banned]
     if request.META['REMOTE_ADDR'] in banned_ips: 
@@ -64,6 +65,7 @@ def blog(request, topic_id=1):
         "topic_id":topic_id
     })
 
+@welcoming_user
 def banning(request):
     if request.method == "POST":
         print(request.POST)
@@ -74,6 +76,7 @@ def banning(request):
             print("error ends here 6", e)
     return HttpResponse("Banned")
 
+@welcoming_user
 def unbanning(request):
     if request.method == "POST":
         print(request.POST)

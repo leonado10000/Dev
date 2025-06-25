@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Visitor
 
 # Create your views here.
 # ======================================
@@ -37,13 +38,29 @@ certificates = [
 ]
 
 
-def decoratorTest(x):
-    def hello(req):
-        print(f"=====================\n Hello, from : {x.__name__}\n=====================")
-        return x(req)
-    return hello
+from functools import wraps
 
-@decoratorTest
+def welcoming_user(view_func):
+    @wraps(view_func)
+    def wrapper(req, *args, **kwargs):
+        ip = req.META.get('REMOTE_ADDR')
+
+        visitor, created = Visitor.objects.get_or_create(ipaddress=ip)
+        visitor.useragent = req.META.get('HTTP_USER_AGENT', 'Unknown')
+        visitor.acceptedlanguage = req.META.get('HTTP_ACCEPT_LANGUAGE', 'Unknown')
+        visitor.acceptedencoding = req.META.get('HTTP_ACCEPT_ENCODING', 'Unknown')
+        visitor.save()
+
+        print("=====================")
+        print(f"Hello, from: {view_func.__name__}")
+        print(f"Hello, to  : {visitor.ipaddress} (created={created})")
+        print("=====================")
+
+        return view_func(req, *args, **kwargs)
+    return wrapper
+
+
+@welcoming_user
 def index(request):
     n = 1
     if n :
@@ -54,12 +71,12 @@ def index(request):
         })
     return render(request, 'v1/index.html')
 
-@decoratorTest
+@welcoming_user
 def projects(request):
     return render(request, 'v1/projects.html'  , {
         "theme": {"text_color": "white", "bg_color": "#1e1e1e", "bg_border": "transparent","border_radius": "10px"}
     })
 
-@decoratorTest
+@welcoming_user
 def v2(request):
 	return render(request, 'v2/base.html')
