@@ -31,7 +31,7 @@ imageLink = [
 
 
 def blog(request, topic_id=1):  
-    if request.META['REMOTE_ADDR'] in ["223.231.142.33", "95.164.34.251", "152.57.119.249"]: 
+    if request.META['REMOTE_ADDR'] in ["223.231.142.33", "95.164.34.251", "152.57.119.249", "124.217.249.48"]: 
         return HttpResponse("Thejas tmkc. Bhag bsdk")
     if request.method == "POST":
         # print(request.POST)
