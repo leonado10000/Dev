@@ -1,9 +1,9 @@
 {% load static %}
 <div id="main-left">
                 
-    <iframe id="profilepic" src="https://drive.google.com/file/d/1ZQ6XMBUTtR1wMuBUlmNcpOZRfhAztEaF/preview" allow="autoplay"></iframe>
+    <!-- <iframe id="profilepic" src="https://drive.google.com/file/d/1ZQ6XMBUTtR1wMuBUlmNcpOZRfhAztEaF/preview" allow="autoplay"></iframe> -->
     <!-- <img id="profilepic" src="https://drive.usercontent.google.com/download?id=1NJdwW9-66hdmI6BSrWPnwbnis-ZfwaML&export=view&authuser=0" alt=""> -->
-    <!-- <img id="profilepic" src="https://i.pinimg.com/736x/dc/d8/8e/dcd88e655dbab8bbd8ee251563d3eeff.jpg" alt=""> -->
+    <img id="profilepic" src="{% static 'me_enchanced2_500kb.png' %}" alt="">
     <!-- <img id="profilepic" src="{% static 'img/miles1.jpg' %}" alt=""> -->
     <div id="m-l-container">
         
@@ -11,12 +11,11 @@
             Rahul Jangra
         </div>
         <div id="my-data">
-            <div id="my-data-data">⚡ 23 years old</div>
-            <div id="my-data-data">👨‍🎓 CSE 4rd Year </div>
-            <div id="my-data-data">🎓 Sir MVIT Bangalore</div>
-            <div id="my-data-data">👨🏻‍💻 ML guy </div>
+            <div id="my-data-data">24</div>
+            <div id="my-data-data">CSE Grad</div>
+            <div id="my-data-data">Data Engineering / Machine Learning</div>
+            <div id="my-data-data">Agents | Backend Engineer</div>
         </div>
-
         <div id="social-data">
             <style>
                 @media (max-width:800px){
@@ -44,10 +43,13 @@
                     }
                 }
             </style>
+            <a href="https://github.com/leonado10000">
+                <img class="img-social" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="">
+            </a>
             <a href="https://www.linkedin.com/in/rahul-jangra-b32a2322a/">
                 <img class="img-social" src="https://img.icons8.com/?size=100&id=xuvGCOXi8Wyg&format=png" alt="">
             </a>
-            <a href="https://www.instagram.com/__curf__">
+            <a href="https://www.instagram.com/_r4hul1">
                 <img class="img-social" src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png" alt="">
             </a>
             <a href="https://twitter.com/rstarjangra">
@@ -104,22 +106,19 @@
         <script>
             // Define an array of random quotes and facts
             const quotesAndFacts = [
-                "🚀 Blast off to adventure! 🌌🪐",
-                "🎨 Embrace your inner artist! 🖌️🎨",
-                "🌟 Chase your dreams! 💫✨",
-                "📅 Plan your next escapade! 🗺️✈️",
-                "🍰 Life is sweet! 🧁🍬",
-                "🐾 Explore like an animal! 🌿🌍",
-                "🌞 Let the sun shine in your heart! 🌻☀️",
-                "🎈 Be childlike, not childish! 🎈🧒",
-                "🚲 Go for a ride, feel alive! 🚴‍♀️🌄",
-                "💡 Ignite your imagination! 🌠🤯",
-                "🌈 Find magic in the mundane! ✨🌆",
-                "🛫 Adventure awaits! 🌏🌅",
-                "📖 Write your own story! 📜✍️",
-                "🍦 Savor simple joys! 🍨🎉",
-                "🌻 Bloom and grow! 🌷🌱",
-                "🎃 Spooky fun ahead! 👻🕯️",
+                "🤖 AI won’t take your job… but someone using AI will. 🧠💼",
+                "💪 Consistency > Motivation. Stay grinding! ⚡🔥",
+                "😂 ‘Bro, trust me’ — last words before a bug in production 🐞🚨",
+                "📱 Fun fact: The first iPhone came out in 2007, the same year ‘Shrek the Third’ released. 🍏📼",
+                "⚡ Elon just tweeted something weird again… 🚀🐕",
+                "🎧 Good headphones = instant productivity boost 🔊💻",
+                "📚 Did you know? The word ‘algorithm’ comes from a Persian mathematician, Al-Khwarizmi! 🔢📖",
+                "☕ Coffee: because adulting is hard. 💤➡️⚡",
+                "🏆 Winners are not people who never fail, but people who never quit! 💯",
+                "😂 Meme of the day: ‘404 Motivation Not Found’ 🚫🔥",
+                "🌍 Fun fact: Octopuses have three hearts and blue blood! 🐙💙",
+                "⌛ One day or day one — you decide. ⏳🔥",
+                "🎮 Life tip: Sometimes you need to ‘restart’ to level up. 🕹️⚡",
             ];
 
             function typeText(element, text, speed, callback) {

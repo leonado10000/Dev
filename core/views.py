@@ -1,6 +1,8 @@
+from html.parser import HTMLParser
 from django.shortcuts import render
 import os
 import json
+import httpx
 import random as rn
 from django.conf import settings
 from Portfolio.views import welcoming_user
@@ -35,7 +37,7 @@ def games_home(request):
 @welcoming_user
 def terminal_view(request):
     themes = {}
-    with open(os.path.join(settings.BASE_DIR,'else','static','themes.json'), 'r') as f:
+    with open(os.path.join(settings.BASE_DIR,'core','static','themes.json'), 'r') as f:
         themes = json.load(f)
     
 
@@ -55,3 +57,23 @@ def visitors(request):
     return render(request, "visitors.html", {
         "visitors": Visitor.objects.all()
     })
+
+def scrape_riot_jobs():
+    base_url = "https://www.riotgames.com"
+    target_url = f"{base_url}/en/work-with-us/jobs#craft=software-engineering-group"
+
+    # Get the HTML content
+    response = httpx.get(target_url)
+    tree = HTMLParser(response.text)
+
+    jobs = []
+    for li in tree.css("li.job-row.job-row--body"):
+        link_tag = li.css_first("a.job-row__inner.js-job-url")
+        role = li.css_first("div.job-row__col--primary").text(strip=True)
+        category = li.css_first("div.job-row__col--secondary").text(strip=True)
+
+        if "software" in category.lower() or "data" in role.lower():
+            job_url = base_url + link_tag.attributes.get("href", "")
+            jobs.append({"role": role, "link": job_url})
+
+    return jobs

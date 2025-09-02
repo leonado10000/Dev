@@ -34,23 +34,23 @@ SECRET_KEY = "django-insecure-+=$dwy-vf#wx=@y$-w^$%z=dp+z%p^nurm-o_t-rj(*zul2-1@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['RahulJangra.vercel.app','.vercel.app','192.168.0.187','*','172.20.10.7','192.168.208.13']
+ALLOWED_HOSTS = ['RahulJangra.vercel.app','.vercel.app','192.168.152.13','*','172.20.10.7','192.168.208.13']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'blog',
-    "Portfolio",
-    'Anime',
-    'myProject',        
-    'else',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "django.contrib.staticfiles",
+    "django.contrib.staticfiles",    
+    'blog',
+    "Portfolio",
+    'Anime',
+    'myProject',        
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -86,18 +86,44 @@ WSGI_APPLICATION = "Rahul.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+def test_db_connection():
+    try:
+        conn = psycopg2.connect(
+            dbname=POSTGRES_DATABASE, 
+            user=POSTGRES_USER, 
+            password=POSTGRES_PASSWORD,
+            host = POSTGRES_HOST)
+        print(conn.status)
+        print("xxxxxxxxxxxxxxxxxxxxxxxxxxxx",conn)
+        return True
+    except Exception:
+        return False
 
-DATABASES = {
+
+if test_db_connection:
+    DATABASES = {
+            'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME' : POSTGRES_DATABASE,
+            'HOST': POSTGRES_HOST,
+            'URL': POSTGRES_URL,
+            'PRISMA_URL': POSTGRES_PRISMA_URL,
+            'USER': POSTGRES_USER,
+            'PASSWORD' : POSTGRES_PASSWORD
+        },
+    }
+else:
+    print("<==Running on local db server==<<<  >.<")
+    DATABASES = {
         'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME' : POSTGRES_DATABASE,
-        'HOST': POSTGRES_HOST,
-        'URL': POSTGRES_URL,
-        'PRISMA_URL': POSTGRES_PRISMA_URL,
-        'USER': POSTGRES_USER,
-        'PASSWORD' : POSTGRES_PASSWORD
-    },
-}
+            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "NAME": "projectManager",
+            'USER': 'Rahul',
+            'PASSWORD': 'Rahul',
+            'PORT':'5432',
+            'HOST':'localhost'
+        }
+    }
 
 
 # Password validation
